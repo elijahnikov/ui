@@ -1,54 +1,20 @@
-import {
-	componentMap,
-	ComponentSectionMapType,
-	ComponentType,
-} from "@/maps/componentMap";
-import Link from "next/link";
+// Next
 import Image from "next/image";
+import Link from "next/link";
 
-interface NavBarProps {}
-
-const NavBar = ({}: NavBarProps) => {
+const NavBar = () => {
 	return (
-		<div className="border-r-[1px] w-[30%] mx-auto justify-center align-center flex p-[10px] float-left h-[100vh]">
-			<Link href={"/"}>
-				<Image
-					alt="Supercrumble logo"
-					width={100}
-					height={100}
-					className=" inline h-12 w-12 cursor-pointer"
-					src="https://i.ibb.co/r4WtSVc/supercrumble800x800.png"
-				/>
-			</Link>
-			<div className="mt-[40px] w-[70%]">
-				{componentMap.map(
-					(componentSection: ComponentSectionMapType) => (
-						<>
-							<div
-								key={componentSection.id}
-								className="pb-[10px]"
-							>
-								<p className="font-semibold text-slate-700">
-									{componentSection.title}
-								</p>
-							</div>
-							<div>
-								{componentSection.components.map(
-									(component: ComponentType) => (
-										<div
-											key={component.id}
-											className="pb-[10px]"
-										>
-											<p className="text-slate-700">
-												{component.title}
-											</p>
-										</div>
-									)
-								)}
-							</div>
-						</>
-					)
-				)}
+		<div className="h-[8vh] border-b-[1px] flex text-center">
+			<div className="flex align-center ml-[10px] items-center ">
+				<Link href={"/"}>
+					<Image
+						alt="Supercrumble logo"
+						width={60}
+						height={60}
+						src="https://i.ibb.co/r4WtSVc/supercrumble800x800.png"
+					/>
+				</Link>
+				<h4 className="ml-[10px]">Supercrumble UI</h4>
 			</div>
 		</div>
 	);
