@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const NavBar = () => {
 	return (
-		<div className="h-[8vh] border-b-[1px] flex text-center">
+		<div className="h-[8vh] border-b-[1px] z-10 fixed flex bg-white w-full text-center">
 			<Link
 				href={"/"}
 				className="flex align-center ml-[10px] items-center "

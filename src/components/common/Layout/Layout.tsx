@@ -11,8 +11,10 @@ const Layout = ({ children }: LayoutProps) => {
 		<div className="h-[100%] min-h-[100%]">
 			<div className="mx-auto">
 				<NavBar />
-				<ComponentsBar />
-				<ContentBar>{children}</ContentBar>
+				<div className="absolute w-full top-[8vh]">
+					<ComponentsBar />
+					<ContentBar>{children}</ContentBar>
+				</div>
 			</div>
 		</div>
 	);
