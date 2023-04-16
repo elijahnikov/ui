@@ -20,13 +20,13 @@ const button = ({}: buttonProps) => {
 				<Button loading={true} intent="primary">
 					Primary
 				</Button>
-				<Button loading={false} intent="secondary">
+				<Button loading={true} intent="secondary">
 					Secondary
 				</Button>
-				<Button loading={false} intent="outline">
+				<Button loading={true} intent="outline">
 					Outline
 				</Button>
-				<Button loading={false} intent="transparent">
+				<Button loading={true} intent="transparent">
 					Transparent
 				</Button>
 			</div>
