@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 const button = cva(
 	[
-		"inline-flex items-center rounded-lg font-medium",
+		"inline-flex items-center justify-center align-center rounded-lg font-medium",
 		"focus:outline-none focus-visible:ring focus-visible:ring-primary-500",
 		"shadow-sm",
 		"transition-colors duration-75",
@@ -92,7 +92,7 @@ const Button = ({
 				{children}
 			</span>
 			{loading && (
-				<span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block w-4 h-4">
+				<span className="absolute block w-4 h-4">
 					<svg
 						className="animate-spin"
 						viewBox="0 0 20 20"

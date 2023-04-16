@@ -17,7 +17,7 @@ const button = ({}: buttonProps) => {
 			<div className="h-[40px]" />
 			<div>
 				<h4>Primary</h4>
-				<Button loading={false} intent="primary">
+				<Button loading={true} intent="primary">
 					Primary
 				</Button>
 				<Button loading={false} intent="secondary">
