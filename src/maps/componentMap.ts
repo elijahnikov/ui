@@ -14,6 +14,33 @@ export type ComponentType = {
 
 export const componentMap: ComponentSectionMapType[] = [
 	{
+		id: 2,
+		title: "Layout",
+		components: [
+			{
+				id: 1,
+				title: "Card",
+				value: "card",
+				href: "/card",
+				disabled: true,
+			},
+			{
+				id: 2,
+				title: "Accordion",
+				value: "accordion",
+				href: "/accordion",
+				disabled: true,
+			},
+			{
+				id: 3,
+				title: "Grid",
+				value: "grid",
+				href: "/grid",
+				disabled: true,
+			},
+		],
+	},
+	{
 		id: 1,
 		title: "Components",
 		components: [
@@ -41,6 +68,35 @@ export const componentMap: ComponentSectionMapType[] = [
 				title: "Switch",
 				value: "switch",
 				href: "/switch",
+				disabled: true,
+			},
+			{
+				id: 5,
+				title: "Input",
+				value: "input",
+				href: "/input",
+				disabled: true,
+			},
+			{
+				id: 6,
+				title: "Input Area",
+				value: "inputArea",
+				href: "/inputArea",
+				disabled: true,
+			},
+
+			{
+				id: 9,
+				title: "Tooltip",
+				value: "tooltip",
+				href: "/tooltip",
+				disabled: true,
+			},
+			{
+				id: 10,
+				title: "Checkbox",
+				value: "checkbox",
+				href: "/checkbox",
 				disabled: true,
 			},
 		],
