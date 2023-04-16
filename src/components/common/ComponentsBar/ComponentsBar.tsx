@@ -31,21 +31,27 @@ const ComponentsBar = () => {
 								</div>
 								<div>
 									{componentSection.components.map(
-										(component: ComponentType) => (
-											<Link
-												href={component.href}
-												key={component.id}
-												className={`${
-													currentPath ===
-														component.href &&
-													"bg-slate-100 rounded-md"
-												} p-[5px] pl-[8px] mb-[8px] hover:bg-red-400 flex align-center items-center`}
-											>
-												<p className="hover:underline cursor-pointer text-slate-700">
-													{component.title}
-												</p>
-											</Link>
-										)
+										(component: ComponentType) =>
+											!component.disabled ? (
+												<Link
+													href={component.href}
+													key={component.id}
+													className={`${
+														currentPath ===
+															component.href &&
+														"bg-slate-100 rounded-md"
+													} p-[5px] pl-[8px] mb-[8px] text-slate-700 hover:underline  flex align-center items-center`}
+												>
+													<p>{component.title}</p>
+												</Link>
+											) : (
+												<div
+													key={component.id}
+													className={` text-slate-400 cursor-not-allowed p-[5px] pl-[8px] mb-[8px] hover:underline  flex align-center items-center`}
+												>
+													<p>{component.title}</p>
+												</div>
+											)
 									)}
 								</div>
 							</>

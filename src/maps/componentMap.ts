@@ -9,6 +9,7 @@ export type ComponentType = {
 	title: string;
 	value: string;
 	href: string;
+	disabled?: boolean;
 };
 
 export const componentMap: ComponentSectionMapType[] = [
@@ -27,6 +28,20 @@ export const componentMap: ComponentSectionMapType[] = [
 				title: "Button or Link",
 				value: "buttonOrLink",
 				href: "/buttonOrLink",
+			},
+			{
+				id: 3,
+				title: "Select",
+				value: "select",
+				href: "/select",
+				disabled: true,
+			},
+			{
+				id: 4,
+				title: "Switch",
+				value: "switch",
+				href: "/switch",
+				disabled: true,
 			},
 		],
 	},
