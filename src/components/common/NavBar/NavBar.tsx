@@ -1,4 +1,5 @@
 // Next
+import Button from "@/components/ui/Button/Button";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
@@ -10,7 +11,7 @@ const NavBar = () => {
 			<div className="inline-flex align-center ml-[10px] w-full items-center ">
 				<Link
 					href={"/"}
-					className="flex align-center ml-[10px] items-center "
+					className="flex w-[80%] align-center ml-[10px] items-center "
 				>
 					<Image
 						alt="Supercrumble logo"

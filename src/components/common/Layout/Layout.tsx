@@ -14,9 +14,9 @@ const Layout = ({ children, title }: LayoutProps) => {
 			<Head>
 				<title>{title}</title>
 			</Head>
-			<div className="mx-auto">
+			<div className="mx-auto ">
 				<NavBar />
-				<div className="absolute w-full top-[8vh]">
+				<div className="absolute top-[8vh]">
 					<ComponentsBar />
 					<ContentBar>{children}</ContentBar>
 				</div>

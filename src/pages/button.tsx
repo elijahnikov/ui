@@ -1,5 +1,6 @@
 import Layout from "@/components/common/Layout/Layout";
 import Button from "@/components/ui/Button/Button";
+import Input from "@/components/ui/Input/Input";
 interface buttonProps {}
 
 const button = ({}: buttonProps) => {
@@ -28,6 +29,9 @@ const button = ({}: buttonProps) => {
 				<Button loading={true} intent="transparent">
 					Transparent
 				</Button>
+			</div>
+			<div>
+				<Input />
 			</div>
 		</Layout>
 	);
