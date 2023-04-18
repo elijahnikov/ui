@@ -1,18 +1,16 @@
 import Button from "@/components/ui/Button/Button";
-import useColorMode from "@/hooks/useColorMode";
+import { useTheme } from "next-themes";
 
 interface DarkModeSwitchProps {}
 
 const DarkModeSwitch = ({}: DarkModeSwitchProps) => {
-	const [colorMode, setColorMode] = useColorMode();
-
+	const { theme, setTheme } = useTheme();
 	return (
 		<Button
 			loading={false}
 			className="p-2 rounded-md"
 			onClick={() => {
-				setColorMode(colorMode === "light" ? "dark" : "light");
-				console.log(1);
+				setTheme(theme === "light" ? "dark" : "light");
 			}}
 		>
 			<svg
