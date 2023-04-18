@@ -15,7 +15,7 @@ const ComponentsBar = () => {
 	}, []);
 
 	return (
-		<div className="border-r-[1px] w-[15vw] bg-white mx-auto min-w-[300px] justify-center align-center flex p-[10px] float-left h-[100vh]">
+		<div className="dark:border-gray-800 border-r-[1px] w-[20%] dark:bg-black bg-white mx-auto min-w-[300px] justify-center align-center flex p-[10px] float-left h-[100vh]">
 			<div className="mt-[40px] w-[60%]">
 				<div className="mt-[10px]">
 					{componentMap.map(
@@ -25,7 +25,7 @@ const ComponentsBar = () => {
 								key={componentSection.id}
 							>
 								<div className="pb-[10px] mb-[10px]">
-									<p className="font-semibold text-slate-700">
+									<p className="font-semibold dark:text-white text-slate-700">
 										{componentSection.title}
 									</p>
 								</div>
@@ -42,15 +42,15 @@ const ComponentsBar = () => {
 													className={`${
 														currentPath ===
 															component.href &&
-														"bg-slate-100 rounded-md"
-													} p-[5px] pl-[8px] mb-[8px] text-slate-700 hover:underline  flex align-center items-center`}
+														"bg-slate-100 dark:bg-gray-800 rounded-md"
+													} p-[5px] pl-[8px] mb-[8px] dark:text-white text-slate-700 hover:underline  flex align-center items-center`}
 												>
 													<p>{component.title}</p>
 												</Link>
 											) : (
 												<div
 													key={component.id}
-													className={` text-slate-400 cursor-not-allowed p-[5px] pl-[8px] mb-[8px] hover:underline  flex align-center items-center`}
+													className={`dark:text-slate-500 text-slate-400 cursor-not-allowed p-[5px] pl-[8px] mb-[8px] hover:underline  flex align-center items-center`}
 												>
 													<p>{component.title}</p>
 												</div>
