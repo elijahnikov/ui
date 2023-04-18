@@ -58,12 +58,6 @@ export const componentMap: ComponentSectionMapType[] = [
 				href: "/button",
 			},
 			{
-				id: 2,
-				title: "Button or Link",
-				value: "buttonOrLink",
-				href: "/buttonOrLink",
-			},
-			{
 				id: 3,
 				title: "Select",
 				value: "select",
