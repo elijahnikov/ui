@@ -1,6 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
+import React from "react";
 
 const button = cva(
 	[
@@ -73,41 +74,43 @@ interface ButtonProps
 	loading: boolean;
 }
 
-const Button = ({
-	children,
-	intent,
-	size,
-	fullWidth,
-	disabled,
-	loading,
-}: ButtonProps) => {
-	return (
-		<button className={button({ intent, size, fullWidth, disabled })}>
-			<span
-				className={classNames(
-					"leading-[1.25rem]",
-					loading && "text-transparent"
-				)}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+	(
+		{ intent, size, fullWidth, disabled, loading, children, ...props },
+		ref
+	) => {
+		return (
+			<button
+				{...props}
+				className={button({ intent, size, fullWidth, disabled })}
 			>
-				{children}
-			</span>
-			{loading && (
-				<span className="absolute block w-4 h-4">
-					<svg
-						className="animate-spin"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							className="fill-current"
-							d="M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"
-						></path>
-					</svg>
-					<span className="sr-only">Loading</span>
+				<span
+					className={classNames(
+						"leading-[1.25rem]",
+						loading && "text-transparent"
+					)}
+				>
+					{children}
 				</span>
-			)}
-		</button>
-	);
-};
+				{loading && (
+					<span className="absolute block w-4 h-4">
+						<svg
+							className="animate-spin"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								className="fill-current"
+								d="M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"
+							></path>
+						</svg>
+						<span className="sr-only">Loading</span>
+					</span>
+				)}
+			</button>
+		);
+	}
+);
+Button.displayName = "Button";
 
 export default Button;
