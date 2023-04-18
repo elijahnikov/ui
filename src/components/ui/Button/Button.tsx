@@ -18,16 +18,16 @@ const button = cva(
 					"hover:bg-primary-600 hover:text-white active:bg-primary-700",
 				],
 				secondary: [
-					"bg-primary-100 text-primary border border-primary-100",
+					"bg-primary-100 text-primary dark:bg-gray-700 dark:text-white dark:border-gray-600 border border-primary-100",
 					"hover:bg-primary-200 active:bg-primary-300",
 				],
 				outline: [
-					"bg-none text-primary border border-primary",
+					"bg-none dark:text-white dark:border-white text-primary border border-primary",
 					"hover:bg-primary-100 active:bg-primary-200",
 				],
 				transparent: [
 					"bg-none shadow-none",
-					"hover:bg-primary-100",
+					"hover:bg-primary-100 dark:hover:bg-gray-700",
 					"active:bg-primary-200",
 				],
 			},
@@ -40,7 +40,7 @@ const button = cva(
 				true: "w-full",
 			},
 			disabled: {
-				true: "text-gray-400",
+				true: "text-gray-700 bg-primary-400 cursor-not-allowed pointer-events-none",
 			},
 		},
 		compoundVariants: [
