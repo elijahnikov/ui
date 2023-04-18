@@ -8,7 +8,7 @@ import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 
 const NavBar = () => {
 	return (
-		<div className="h-[8vh] border-b-[1px] z-10 fixed flex dark:bg-black dark:text-white text-black bg-white w-full text-center">
+		<div className="h-[8vh] dark:border-gray-800 border-b-[1px] z-10 fixed flex dark:bg-black dark:text-white text-black bg-white w-full text-center">
 			<div className="inline-flex align-center ml-[10px] w-full items-center ">
 				<Link
 					href={"/"}
