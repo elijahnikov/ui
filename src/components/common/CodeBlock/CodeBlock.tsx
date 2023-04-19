@@ -12,7 +12,7 @@ const CodeBlock = ({ code }: CodeBlockProps) => {
 	};
 
 	return (
-		<div className="inline-block w-full flex-col dark:border-slate-600 dark:bg-slate-800 bg-slate-200 dark:text-white rounded-lg p-[25px] border-[1px] border-gray-300">
+		<div className="inline-block text-sm w-full flex-col dark:border-slate-600 dark:bg-slate-800 bg-gray-100 dark:text-white rounded-lg p-[25px] border-[1px] border-gray-300">
 			<pre className="w-[95%] float-left">
 				<code className="language-javascript">{code}</code>
 			</pre>
