@@ -1,7 +1,14 @@
+import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
 import Layout from "@/components/common/Layout/Layout";
 import Button from "@/components/ui/Button/Button";
 import Input from "@/components/ui/Input/Input";
 interface buttonProps {}
+
+const buttonCode = `import Button from "@/components/ui/Button/Button";
+
+<Button loading={true} intent="outline">
+    Outline
+</Button>`;
 
 const button = ({}: buttonProps) => {
 	return (
@@ -30,9 +37,10 @@ const button = ({}: buttonProps) => {
 					Transparent
 				</Button>
 			</div>
-			<div>
+			{/* <div>
 				<Input />
-			</div>
+			</div> */}
+			<CodeBlock code={buttonCode} />
 		</Layout>
 	);
 };
