@@ -19,16 +19,16 @@ const button = cva(
 				],
 				secondary: [
 					"bg-primary-100 text-primary dark:bg-gray-700 dark:text-white dark:border-gray-600 border border-primary-100",
-					"hover:bg-primary-200 active:bg-primary-300",
+					"hover:bg-primary-200 dark:hover:bg-gray-600 dark:active:bg-gray-500 active:bg-primary-300",
 				],
 				outline: [
 					"bg-none dark:text-white dark:border-white text-primary border border-primary",
-					"hover:bg-primary-100 active:bg-primary-200",
+					"hover:bg-primary-100 dark:hover:bg-gray-700 dark:active:bg-gray-500 active:bg-primary-200",
 				],
 				transparent: [
 					"bg-none shadow-none",
 					"hover:bg-primary-100 dark:hover:bg-gray-700",
-					"active:bg-primary-200",
+					"active:bg-primary-200 dark:active:bg-gray-600",
 				],
 			},
 			size: {
