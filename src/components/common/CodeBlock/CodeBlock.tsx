@@ -17,7 +17,12 @@ const CodeBlock = ({ code }: CodeBlockProps) => {
 				<code className="language-javascript">{code}</code>
 			</pre>
 			<div className="float-right mt-[-5px] w-[5%] h-full">
-				<Button loading={false} intent={"transparent"} size="sm">
+				<Button
+					onClick={() => copyToClipboard()}
+					loading={false}
+					intent={"transparent"}
+					size="sm"
+				>
 					<IoMdClipboard className="float-right h-5 w-5" />
 				</Button>
 			</div>
