@@ -11,7 +11,7 @@ interface buttonProps {}
 //     Outline
 // </Button>`;
 
-const button = ({}: buttonProps) => {
+const ButtonPage = ({}: buttonProps) => {
     return (
         <Layout title="Button - Supercrumble UI">
             <div className="mb-[40px]">
@@ -48,6 +48,36 @@ const button = ({}: buttonProps) => {
                     <Button loading={false} intent={"transparent"}>
                         Transparent
                     </Button>
+                    <Button loading={false} disabled intent={"primary"}>
+                        Disabled
+                    </Button>
+                </div>
+                <CodeBlock code={buttonCode.variants} />
+            </div>
+
+            <div className="mt-[30px]">
+                <h4 className="mb-[30px]">Sizes</h4>
+                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5 [&:nth-child(4)]:space-x-0">
+                    <Button loading={false} intent={"primary"} size={"sm"}>
+                        Small
+                    </Button>
+                    <Button loading={false} intent={"primary"} size={"base"}>
+                        Default
+                    </Button>
+                    <Button loading={false} intent={"primary"} size={"large"}>
+                        Large
+                    </Button>
+                    <div>
+                        <Button
+                            className=""
+                            loading={false}
+                            intent={"primary"}
+                            fullWidth
+                            size={"base"}
+                        >
+                            Full Width
+                        </Button>
+                    </div>
                 </div>
                 <CodeBlock code={buttonCode.variants} />
             </div>
@@ -55,4 +85,4 @@ const button = ({}: buttonProps) => {
     );
 };
 
-export default button;
+export default ButtonPage;
