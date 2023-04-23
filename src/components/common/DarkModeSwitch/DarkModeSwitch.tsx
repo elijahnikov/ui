@@ -1,22 +1,28 @@
 import Button from "@/components/ui/Button/Button";
 import { useTheme } from "next-themes";
-import { BsFillSunFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import { BsFillSunFill, BsMoon, BsMoonFill } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
 
 interface DarkModeSwitchProps {}
 
 const DarkModeSwitch = ({}: DarkModeSwitchProps) => {
     const { theme, setTheme } = useTheme();
+    const [isDark, setIsDark] = useState<boolean>(theme === "dark");
+    useEffect(() => {
+        setIsDark(theme === "dark");
+    }, [theme]);
+
     return (
         <Button
             loading={false}
-            intent={theme === "light" ? "primary" : "outline"}
+            intent={theme === "light" ? "secondary" : "outline"}
             className="p-2 rounded-md"
             onClick={() => {
                 setTheme(theme === "light" ? "dark" : "light");
             }}
         >
-            {theme === "light" ? <MdDarkMode /> : <BsFillSunFill />}
+            {!isDark ? <BsMoonFill /> : <BsFillSunFill />}
         </Button>
     );
 };

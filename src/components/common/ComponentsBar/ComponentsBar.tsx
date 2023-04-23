@@ -15,8 +15,8 @@ const ComponentsBar = () => {
     }, []);
 
     return (
-        <div className="hidden md:flex dark:border-gray-800 border-r-[1px] min-w-[20%] w-[20%] dark:bg-black bg-white mx-auto justify-center align-center flex p-[10px] float-left h-[100vh]">
-            <div className="mt-[40px] w-[60%]">
+        <div className="hidden md:flex mt-[00px] dark:border-gray-800 border-r-[1px] h-[100vh] min-w-[20%] w-[20%] dark:bg-black bg-white  mx-auto justify-center align-center flex p-[10px] float-left">
+            <div className="mt-[40px] w-[60%] ">
                 <div className="mt-[10px]">
                     {componentMap.map(
                         (componentSection: ComponentSectionMapType) => (
