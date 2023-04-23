@@ -26,9 +26,7 @@ const ButtonPage = ({}: buttonProps) => {
                 <h4 className="mb-[30px]">Usage</h4>
                 {/* PRIMARY BUTTON */}
                 <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
-                    <Button loading={false} intent="primary">
-                        Primary
-                    </Button>
+                    <Button intent="primary">Primary</Button>
                 </div>
                 <CodeBlock code={buttonCode.primary} />
             </div>
@@ -36,19 +34,11 @@ const ButtonPage = ({}: buttonProps) => {
             <div className="mt-[30px]">
                 <h4 className="mb-[30px]">Variants</h4>
                 <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
-                    <Button loading={false} intent={"primary"}>
-                        Primary
-                    </Button>
-                    <Button loading={false} intent={"secondary"}>
-                        Secondary
-                    </Button>
-                    <Button loading={false} intent={"outline"}>
-                        Outline
-                    </Button>
-                    <Button loading={false} intent={"transparent"}>
-                        Transparent
-                    </Button>
-                    <Button loading={false} disabled intent={"primary"}>
+                    <Button intent={"primary"}>Primary</Button>
+                    <Button intent={"secondary"}>Secondary</Button>
+                    <Button intent={"outline"}>Outline</Button>
+                    <Button intent={"transparent"}>Transparent</Button>
+                    <Button disabled intent={"primary"}>
                         Disabled
                     </Button>
                 </div>
@@ -58,19 +48,18 @@ const ButtonPage = ({}: buttonProps) => {
             <div className="mt-[30px]">
                 <h4 className="mb-[30px]">Sizes</h4>
                 <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5 [&:nth-child(4)]:space-x-0">
-                    <Button loading={false} intent={"primary"} size={"sm"}>
+                    <Button intent={"primary"} size={"sm"}>
                         Small
                     </Button>
-                    <Button loading={false} intent={"primary"} size={"base"}>
+                    <Button intent={"primary"} size={"base"}>
                         Default
                     </Button>
-                    <Button loading={false} intent={"primary"} size={"large"}>
+                    <Button intent={"primary"} size={"large"}>
                         Large
                     </Button>
-                    <div>
+                    <div className="mt-[20px]">
                         <Button
-                            className=""
-                            loading={false}
+                            className="ml-[-20px]"
                             intent={"primary"}
                             fullWidth
                             size={"base"}
@@ -79,7 +68,25 @@ const ButtonPage = ({}: buttonProps) => {
                         </Button>
                     </div>
                 </div>
-                <CodeBlock code={buttonCode.variants} />
+                <CodeBlock code={buttonCode.sizes} />
+            </div>
+
+            <div className="mt-[30px]">
+                <h4 className="">Loading state</h4>
+                <p className="mb-[30px]">
+                    You can pass the loading prop to the button component to
+                    signify its loading state, for example, when a user performs
+                    a submit action.
+                </p>
+                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5 [&:nth-child(4)]:space-x-0">
+                    <Button intent={"primary"} loading>
+                        Primary
+                    </Button>
+                    <Button intent={"secondary"} loading>
+                        Primary
+                    </Button>
+                </div>
+                <CodeBlock code={buttonCode.loadingState} />
             </div>
         </Layout>
     );

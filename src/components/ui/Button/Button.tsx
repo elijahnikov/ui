@@ -71,7 +71,7 @@ interface ButtonProps
     extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled">,
         VariantProps<typeof button> {
     children: React.ReactNode;
-    loading: boolean;
+    loading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -82,7 +82,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             size,
             fullWidth,
             disabled,
-            loading,
+            loading = false,
             children,
             ...props
         },
@@ -108,7 +108,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                     {children}
                 </span>
                 {loading && (
-                    <span className="absolute block w-4 h-4">
+                    <span className={`absolute block w-4 h-4`}>
                         <svg
                             className="animate-spin"
                             viewBox="0 0 20 20"
