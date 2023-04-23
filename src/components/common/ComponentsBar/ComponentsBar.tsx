@@ -15,9 +15,9 @@ const ComponentsBar = () => {
     }, []);
 
     return (
-        <div className="hidden md:flex mt-[00px] dark:border-gray-800 border-r-[1px] h-[100vh] min-w-[20%] w-[20%] dark:bg-black bg-white  mx-auto justify-center align-center flex p-[10px] float-left">
+        <div className="hidden md:flex dark:border-gray-800 fixed overflow-y-auto border-r-[1px] h-[92vh] min-w-[20%] w-[20%] dark:bg-black bg-white  mx-auto justify-center align-center flex p-[10px] float-left">
             <div className="mt-[40px] w-[60%] ">
-                <div className="mt-[10px]">
+                <div className="mt-[10px] mb-[20px]">
                     {componentMap.map(
                         (componentSection: ComponentSectionMapType) => (
                             <div
@@ -29,7 +29,7 @@ const ComponentsBar = () => {
                                         {componentSection.title}
                                     </p>
                                 </div>
-                                <div>
+                                <div className="mb-[30px]">
                                     {componentSection.components
                                         .sort((a, b) =>
                                             a.title.localeCompare(b.title)
@@ -60,6 +60,7 @@ const ComponentsBar = () => {
                             </div>
                         )
                     )}
+                    <div className="h-[20px]" />
                 </div>
             </div>
         </div>

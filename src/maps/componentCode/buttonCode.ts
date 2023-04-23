@@ -14,11 +14,17 @@ export const buttonCode = {
     Secondary
 </Button>
 
-<Button loading={true} intent="outline">
+<Button loading={false} intent="outline">
     Outline
 </Button>
 
-<Button loading={true} intent="transparent">
+<Button loading={false} intent="transparent">
     Transparent
+</Button>
+
+<Button loading={false} disabled intent="primary">
+    Disabled
 </Button>`,
+
+    sizes: ``,
 };
