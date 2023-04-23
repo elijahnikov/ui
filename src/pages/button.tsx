@@ -47,7 +47,7 @@ const ButtonPage = ({}: buttonProps) => {
 
             <div className="mt-[30px]">
                 <h4 className="mb-[30px]">Sizes</h4>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5 [&:nth-child(4)]:space-x-0">
+                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
                     <Button intent={"primary"} size={"sm"}>
                         Small
                     </Button>
@@ -78,7 +78,7 @@ const ButtonPage = ({}: buttonProps) => {
                     signify its loading state, for example, when a user performs
                     a submit action.
                 </p>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5 [&:nth-child(4)]:space-x-0">
+                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
                     <Button intent={"primary"} loading>
                         Primary
                     </Button>
