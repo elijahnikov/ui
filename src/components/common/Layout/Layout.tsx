@@ -12,13 +12,13 @@ interface LayoutProps {
 
 const Layout = ({ children, title }: LayoutProps) => {
     return (
-        <div className="h-[100%] min-h-[100%]">
+        <div className="h-[100%]">
             <Head>
                 <title>{title}</title>
             </Head>
-            <div className="mx-auto ">
+            <div className="mx-auto">
                 <NavBar />
-                <div className="absolute block w-full top-[8vh]">
+                <div className="absolute w-full top-[8vh]">
                     <ComponentsBar />
                     <ContentBar>{children}</ContentBar>
                 </div>
