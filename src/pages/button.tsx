@@ -1,8 +1,20 @@
+// Components
 import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+
+// Button
 import Button from "@/components/ui/Button/Button";
+
+// Maps
 import { buttonCode, buttonMenuMap } from "@/maps/component/button";
+
+// Icons
+import {
+    AiFillGithub,
+    AiFillSave,
+    AiOutlineCloudDownload,
+} from "react-icons/ai";
 
 interface buttonProps {}
 
@@ -30,7 +42,7 @@ const ButtonPage = ({}: buttonProps) => {
                 <CodeBlock code={buttonCode.primary} />
             </div>
 
-            <div className="mt-[30px]">
+            <div className="mt-[50px]">
                 <a
                     className="relative h-[20px] invisible top-[-80px]"
                     id="variants"
@@ -48,7 +60,7 @@ const ButtonPage = ({}: buttonProps) => {
                 <CodeBlock code={buttonCode.variants} />
             </div>
 
-            <div className="mt-[30px]">
+            <div className="mt-[50px]">
                 <a
                     className="relative h-[20px] invisible top-[-80px]"
                     id="sizes"
@@ -78,7 +90,7 @@ const ButtonPage = ({}: buttonProps) => {
                 <CodeBlock code={buttonCode.sizes} />
             </div>
 
-            <div className="mt-[30px]">
+            <div className="mt-[50px]">
                 <a
                     className="relative h-[20px] invisible top-[-80px]"
                     id="loading-state"
@@ -99,6 +111,38 @@ const ButtonPage = ({}: buttonProps) => {
                 </div>
                 <CodeBlock code={buttonCode.loadingState} />
             </div>
+
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="button-with-icon"
+                ></a>
+                <h4 className="">Button with icon</h4>
+                <p className="mb-[30px]">
+                    {`You can add left or right icons to your Buttons by passing your chosen icon from the 
+                    "react-icons" library in order to add meaning or give more context to specific button actions.`}
+                </p>
+                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
+                    <Button intent={"primary"} leftIcon={AiFillSave}>
+                        Save
+                    </Button>
+                    <Button
+                        intent={"secondary"}
+                        rightIcon={AiOutlineCloudDownload}
+                    >
+                        Download
+                    </Button>
+                </div>
+                <CodeBlock code={buttonCode.buttonWithIcon} />
+            </div>
+            <a
+                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Button/Button.tsx"
+                target="_self"
+                className="dark:text-slate-500 text-slate-500 flex justify-center w-full mt-[50px] h-[150px] mb-[100px]"
+            >
+                <AiFillGithub className="h-5 w-5" />
+                <p className="text-sm ml-2">View Button on GitHub.</p>
+            </a>
         </Layout>
     );
 };
