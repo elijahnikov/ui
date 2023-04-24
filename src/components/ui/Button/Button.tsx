@@ -2,6 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
 import React from "react";
+import { IconType } from "react-icons";
 
 const button = cva(
     [
@@ -70,8 +71,10 @@ const button = cva(
 interface ButtonProps
     extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled">,
         VariantProps<typeof button> {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     loading?: boolean;
+    leftIcon?: IconType;
+    rightIcon?: IconType;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -84,6 +87,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             disabled,
             loading = false,
             children,
+            leftIcon: LeftIcon,
+            rightIcon: RightIcon,
             ...props
         },
         ref
@@ -105,7 +110,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                         loading && "text-transparent"
                     )}
                 >
-                    {children}
+                    <div className="flex">
+                        {LeftIcon && (
+                            <LeftIcon
+                                className={`${
+                                    children && "top-[2px]"
+                                } relative mr-[10px]`}
+                            />
+                        )}
+                        {children}
+                        {RightIcon && (
+                            <RightIcon
+                                className={`${
+                                    children && "top-[2px]"
+                                } relative ml-[10px]`}
+                            />
+                        )}
+                    </div>
                 </span>
                 {loading && (
                     <span className={`absolute block w-4 h-4`}>
