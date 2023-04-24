@@ -1,3 +1,24 @@
+import { MenuMap } from "./types";
+
+export const buttonMenuMap: MenuMap[] = [
+    {
+        label: "Usage",
+        href: "#usage",
+    },
+    {
+        label: "Variants",
+        href: "#variants",
+    },
+    {
+        label: "Sizes",
+        href: "#sizes",
+    },
+    {
+        label: "Loading State",
+        href: "#loading-state",
+    },
+];
+
 export const buttonCode = {
     primary: `import Button from "@/components/ui/Button/Button";
 

@@ -5,13 +5,15 @@ import Head from "next/head";
 import Button from "@/components/ui/Button/Button";
 import { AiOutlineMenu } from "react-icons/ai";
 import PageBrowser from "../PageBrowser/PageBrowser";
+import { MenuMap } from "@/maps/component/types";
 
 interface LayoutProps {
     children: React.ReactNode;
     title?: string;
+    menuMap?: MenuMap[];
 }
 
-const Layout = ({ children, title }: LayoutProps) => {
+const Layout = ({ children, title, menuMap }: LayoutProps) => {
     return (
         <div className="h-[100%]">
             <Head>
@@ -22,7 +24,7 @@ const Layout = ({ children, title }: LayoutProps) => {
                 <div className="absolute flex w-full top-[8vh]">
                     <ComponentsBar />
                     <ContentBar>{children}</ContentBar>
-                    <PageBrowser />
+                    {menuMap && <PageBrowser menuMap={menuMap} />}
                 </div>
                 <div className="left-5 visible md:invisible absolute block top-[10vh]">
                     <Button loading={false} intent={"primary"}>

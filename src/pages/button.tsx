@@ -2,13 +2,13 @@ import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import Button from "@/components/ui/Button/Button";
-import { buttonCode } from "@/maps/componentCode/buttonCode";
+import { buttonCode, buttonMenuMap } from "@/maps/component/button";
 
 interface buttonProps {}
 
 const ButtonPage = ({}: buttonProps) => {
     return (
-        <Layout title="Button - Supercrumble UI">
+        <Layout title="Button - Supercrumble UI" menuMap={buttonMenuMap}>
             <div className="mb-[40px]">
                 <PageHeader
                     title="Button"
@@ -18,6 +18,10 @@ const ButtonPage = ({}: buttonProps) => {
                 />
             </div>
             <div>
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="usage"
+                ></a>
                 <h4 className="mb-[30px]">Usage</h4>
                 {/* PRIMARY BUTTON */}
                 <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
