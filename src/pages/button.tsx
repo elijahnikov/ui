@@ -31,6 +31,10 @@ const ButtonPage = ({}: buttonProps) => {
             </div>
 
             <div className="mt-[30px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="variants"
+                ></a>
                 <h4 className="mb-[30px]">Variants</h4>
                 <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
                     <Button intent={"primary"}>Primary</Button>
@@ -45,6 +49,10 @@ const ButtonPage = ({}: buttonProps) => {
             </div>
 
             <div className="mt-[30px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="sizes"
+                ></a>
                 <h4 className="mb-[30px]">Sizes</h4>
                 <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
                     <Button intent={"primary"} size={"sm"}>
@@ -71,6 +79,10 @@ const ButtonPage = ({}: buttonProps) => {
             </div>
 
             <div className="mt-[30px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="loading-state"
+                ></a>
                 <h4 className="">Loading state</h4>
                 <p className="mb-[30px]">
                     You can pass the loading prop to the button component to
