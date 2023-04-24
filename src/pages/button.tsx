@@ -3,13 +3,8 @@ import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import Button from "@/components/ui/Button/Button";
 import { buttonCode } from "@/maps/componentCode/buttonCode";
+
 interface buttonProps {}
-
-// const buttonCode = `import Button from "@/components/ui/Button/Button";
-
-// <Button loading={true} intent="primary">
-//     Outline
-// </Button>`;
 
 const ButtonPage = ({}: buttonProps) => {
     return (
