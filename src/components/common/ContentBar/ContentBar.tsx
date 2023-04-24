@@ -1,5 +1,3 @@
-import PageBrowser from "../PageBrowser/PageBrowser";
-
 interface ContentBarProps {
     children: React.ReactNode;
 }
