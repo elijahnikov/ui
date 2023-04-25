@@ -27,9 +27,8 @@ const button = cva(
                     "dark:bg-none dark:text-primary-light dark:border-primary-light dark:hover:border-primary-base dark:hover:text-primary-base",
                 ],
                 transparent: [
-                    "bg-none shadow-none",
-                    "hover:bg-primary-100 dark:hover:bg-gray-700",
-                    "active:bg-primary-200 dark:active:bg-gray-600",
+                    "bg-none shadow-none border-none text-primary-base hover:bg-primary-lightest active:bg-primary-lighter",
+                    "dark:text-primary-light dark:hover:text-primary-base dark:hover:bg-primary-lighter dark:active:bg-primary-light",
                 ],
             },
             size: {
