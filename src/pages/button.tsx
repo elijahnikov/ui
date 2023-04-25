@@ -5,6 +5,7 @@ import PageHeader from "@/components/common/PageHeader/PageHeader";
 
 // Button
 import Button from "@/components/ui/Button/Button";
+import Input from "@/components/ui/Input/Input";
 
 // Maps
 import { buttonCode, buttonMenuMap } from "@/maps/component/button";
@@ -28,6 +29,13 @@ const ButtonPage = ({}: buttonProps) => {
 					express what action will occur when the user interacts with
 					it.`}
                 />
+            </div>
+            <div className=" h-[500px]">
+                <Input placeholder="Base" size={"base"} />
+                <Input size={"sm"} />
+                <Input size={"large"} />
+                <Input size={"base"} fullWidth />
+                <Input disabled placeholder="test" />
             </div>
             <div>
                 <a
