@@ -76,7 +76,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Input",
                 value: "input",
                 href: "/input",
-                disabled: true,
+                disabled: false,
             },
             {
                 id: 6,
