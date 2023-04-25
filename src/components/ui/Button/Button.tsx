@@ -15,21 +15,20 @@ const button = cva(
         variants: {
             intent: {
                 primary: [
-                    "bg-primary text-white border border-primary-500",
-                    "hover:bg-primary-600 hover:text-white active:bg-primary-700",
+                    "bg-primary-base text-white",
+                    "hover:bg-primary-dark active:bg-primary-darker",
                 ],
                 secondary: [
-                    "bg-primary-100 text-primary dark:bg-gray-700 dark:text-white dark:border-gray-600 border border-primary-100",
-                    "hover:bg-primary-200 dark:hover:bg-gray-600 dark:active:bg-gray-500 active:bg-primary-300",
+                    "bg-primary-lightest text-primary-base hover:bg-primary-lighter active:bg-white active:text-primary-darker",
+                    "dark:bg-primary-lighter dark:text-primary-darker dark:hover:bg-primary-light dark:active:bg-white",
                 ],
                 outline: [
-                    "bg-none dark:text-white dark:border-white text-primary border border-primary",
-                    "hover:bg-primary-100 dark:hover:bg-gray-700 dark:active:bg-gray-500 active:bg-primary-200",
+                    "bg-none text-primary-base border-[1px] border-primary-base hover:border-primary-dark hover:text-primary-dark active:bg-primary-lightest dark:active:bg-primary-light",
+                    "dark:bg-none dark:text-primary-light dark:border-primary-light dark:hover:border-primary-base dark:hover:text-primary-base",
                 ],
                 transparent: [
-                    "bg-none shadow-none",
-                    "hover:bg-primary-100 dark:hover:bg-gray-700",
-                    "active:bg-primary-200 dark:active:bg-gray-600",
+                    "bg-none shadow-none border-none text-primary-base hover:bg-primary-lightest active:bg-primary-lighter",
+                    "dark:text-primary-light dark:hover:text-primary-base dark:hover:bg-primary-lighter dark:active:bg-primary-light",
                 ],
             },
             size: {
@@ -41,24 +40,27 @@ const button = cva(
                 true: "w-full",
             },
             disabled: {
-                true: "text-gray-700 bg-primary-400 cursor-not-allowed pointer-events-none",
+                true: "cursor-not-allowed pointer-events-none",
             },
         },
         compoundVariants: [
             {
                 disabled: true,
                 intent: "primary",
-                className: "bg-gray-200 border-none",
+                className:
+                    "bg-sky-light text-sky-dark dark:bg-ink-dark dark:text-ink-light",
             },
             {
                 disabled: true,
                 intent: "secondary",
-                className: "bg-gray-200 border-none",
+                className:
+                    "bg-sky-light text-sky-dark dark:bg-ink-dark dark:text-ink-light",
             },
             {
                 disabled: true,
-                intent: "secondary",
-                className: "bg-gray-200 border-none",
+                intent: "outline",
+                className:
+                    "bg-none text-sky-base border-[1px] border-sky-base dark:text-ink-base dark:border-ink-base",
             },
         ],
         defaultVariants: {
