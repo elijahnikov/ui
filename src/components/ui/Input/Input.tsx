@@ -8,7 +8,7 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
         intent: {
             default: [
                 "placeholder-ink-lighter text-black border-sky-light focus:border-primary-base dark:focus:border-primary-base",
-                "dark:placeholder-sky-dark dark:bg-black dark:border-ink-dark dark:text-white",
+                "dark:placeholder-sky-dark dark:bg-black dark:border-slate-800 dark:text-white",
             ],
         },
         size: {
@@ -93,16 +93,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     </div>
                 )}
                 <div
-                    className={`${
-                        (Prefix || Suffix) && "flex"
+                    className={`${(Prefix || Suffix) && "flex"} ${
+                        Prefix && "ml-[4px]"
                     } w-[100%] text-left`}
                 >
                     {Prefix && (
-                        <div className="bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative z-10 left-[-5px] border-r-0 border-[2px] border-sky-light dark:border-ink-dark py-2 px-3 text-sm">
-                            <p className="mt-[2px] text-slate-400">
-                                {(Prefix as IconType) && (
-                                    <Prefix className="h-6 w-6 relative top-[-1px] fill-sky-dark dark:fill-ink-lightest" />
-                                )}
+                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative z-10 left-[-5px] border-r-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
+                            <p className=" text-slate-400">
+                                {typeof Prefix !== "string"
+                                    ? (Prefix as IconType) && (
+                                          <Prefix className="h-6 w-6 relative top-[-1px] fill-sky-dark dark:fill-ink-lightest" />
+                                      )
+                                    : null}
                                 {typeof Prefix === "string" && String(Prefix)}
                             </p>
                         </div>
@@ -126,11 +128,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         {children}
                     </input>
                     {Suffix && (
-                        <div className="bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative z-10 right-[-5px] border-l-0 border-[2px] border-sky-light dark:border-ink-dark py-2 px-3 text-sm">
-                            <p className="mt-[2px] text-slate-400">
-                                {(Suffix as IconType) && (
-                                    <Suffix className="h-6 w-6 relative top-[-1px] fill-sky-dark dark:fill-ink-lightest" />
-                                )}
+                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative z-10 right-[-5px] border-l-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
+                            <p className=" text-slate-400">
+                                {typeof Suffix !== "string"
+                                    ? (Suffix as IconType) && (
+                                          <Suffix className="h-6 w-6 relative top-[-1px] fill-sky-dark dark:fill-ink-lightest" />
+                                      )
+                                    : null}
                                 {typeof Suffix === "string" && String(Suffix)}
                             </p>
                         </div>
