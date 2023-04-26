@@ -30,13 +30,6 @@ const ButtonPage = ({}: buttonProps) => {
 					it.`}
                 />
             </div>
-            <div className=" h-[500px]">
-                <Input placeholder="Base" size={"base"} />
-                <Input size={"sm"} />
-                <Input size={"large"} />
-                <Input size={"base"} fullWidth />
-                <Input disabled placeholder="test" />
-            </div>
             <div>
                 <a
                     className="relative h-[20px] invisible top-[-80px]"
