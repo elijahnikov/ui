@@ -98,7 +98,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     } w-[100%] text-left`}
                 >
                     {Prefix && (
-                        <div className="rounded-l-lg relative z-10 bg-white dark:bg-black left-2 border-[1px] border-sky-light dark:border-ink-dark border-r-[1px] py-2 px-3 text-sm">
+                        <div className="rounded-l-lg z-10 bg-white dark:bg-black left-2 border-[1px] border-sky-light dark:border-ink-dark border-r-[1px] py-2 px-3 text-sm">
                             <p className="mt-[2px] text-slate-400">
                                 {(Prefix as IconType) && <Prefix />}
                                 {typeof Prefix === "string" && String(Prefix)}
@@ -115,12 +115,22 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                             size,
                             disabled,
                             error,
-                            className,
+                            className: `${
+                                Prefix && "ml-[-5px] rounded-l-none"
+                            } ${Suffix && "mr-[-5px] rounded-r-none"}`,
                             fullWidth,
                         })}
                     >
                         {children}
                     </input>
+                    {Suffix && (
+                        <div className="rounded-r-lg relative z-10 bg-white dark:bg-black right-2 border-[1px] border-sky-light dark:border-ink-dark border-r-[1px] py-2 px-3 text-sm">
+                            <p className="mt-[2px] text-slate-400">
+                                {(Suffix as IconType) && <Suffix />}
+                                {typeof Suffix === "string" && String(Suffix)}
+                            </p>
+                        </div>
+                    )}
                 </div>
             </>
         );

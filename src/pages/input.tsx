@@ -25,7 +25,8 @@ const InputPage = ({}: InputPageProps) => {
                     <div className="h-[50px]" />
                     <Input
                         label={"Username"}
-                        prefix={"One"}
+                        prefix={`https`}
+                        suffix={"com"}
                         fullWidth
                         placeholder="Base"
                         size={"base"}
