@@ -2,6 +2,7 @@ import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import Input from "@/components/ui/Input/Input";
 import React, { useEffect, useState } from "react";
+import { AiFillGithub } from "react-icons/ai";
 import { Bs0Circle } from "react-icons/bs";
 
 interface InputPageProps {}
@@ -25,9 +26,8 @@ const InputPage = ({}: InputPageProps) => {
                     <div className="h-[50px]" />
                     <Input
                         label={"Username"}
-                        prefix={`https`}
-                        suffix={"com"}
-                        fullWidth
+                        prefix={AiFillGithub}
+                        suffix={"AiFillGithub"}
                         placeholder="Base"
                         size={"base"}
                     />
