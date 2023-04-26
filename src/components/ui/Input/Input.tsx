@@ -2,6 +2,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import React, { useRef } from "react";
 import { InputHTMLAttributes } from "react";
 import { IconType } from "react-icons";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
     variants: {
@@ -76,6 +77,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             errorText,
             prefix: Prefix,
             suffix: Suffix,
+            clearable,
             placeholder,
             fullWidth,
             label,
@@ -83,8 +85,17 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         },
         ref
     ) => {
+        const inputRef = useRef<HTMLInputElement | null>(null);
+
+        const clearInput = () => {
+            if (inputRef.current) {
+                inputRef.current.value = "";
+            }
+        };
+
         return (
             <>
+                {/* if label is passed */}
                 {label && (
                     <div className="relative top-[-5px] ml-1">
                         <label className="text-sm text-black dark:text-white">
@@ -93,10 +104,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     </div>
                 )}
                 <div
+                    //if fullWidth is passed make container w-100% other wise make it fit content
+                    // if prefix and suffix is passed add flex so that elements are side by side
                     className={`${(Prefix || Suffix) && "flex"} ${
                         Prefix && "ml-[4px]"
-                    } w-[100%] text-left`}
+                    } ${fullWidth ? "w-[100%]" : "w-max"} relative text-left`}
                 >
+                    {/* is prefix is passed */}
                     {Prefix && (
                         <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative z-10 left-[-5px] border-r-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
                             <p className=" text-slate-400">
@@ -110,7 +124,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         </div>
                     )}
                     <input
-                        ref={ref}
+                        ref={inputRef}
                         disabled={disabled}
                         placeholder={placeholder}
                         {...props}
@@ -127,6 +141,16 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     >
                         {children}
                     </input>
+                    {/* if clearable is passed */}
+                    {clearable && (
+                        <AiOutlineCloseCircle
+                            onClick={() => clearInput()}
+                            className={`${
+                                Suffix ? "right-[20%]" : "right-[5%]"
+                            } shadow-lg absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-5 w-5 top-[50%] right-[5%]`}
+                        />
+                    )}
+                    {/* if suffix is passed */}
                     {Suffix && (
                         <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative z-10 right-[-5px] border-l-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
                             <p className=" text-slate-400">
