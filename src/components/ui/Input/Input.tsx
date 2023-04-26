@@ -1,13 +1,13 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React from "react";
+import React, { useRef } from "react";
 import { InputHTMLAttributes } from "react";
 import { IconType } from "react-icons";
 
-const input = cva(["py-2 px-3", "rounded-lg", "border-[1px]"], {
+const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
     variants: {
         intent: {
             default: [
-                "placeholder-ink-lighter text-black border-sky-light focus:outline-primary-base",
+                "placeholder-ink-lighter text-black border-sky-light focus:border-primary-base",
                 "dark:placeholder-sky-dark dark:bg-black dark:border-ink-dark dark:text-white",
             ],
         },
@@ -98,7 +98,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     } w-[100%] text-left`}
                 >
                     {Prefix && (
-                        <div className="rounded-l-lg z-10 bg-white dark:bg-black left-2 border-[1px] border-sky-light dark:border-ink-dark border-r-[1px] py-2 px-3 text-sm">
+                        <div className="rounded-l-lg relative z-10 bg-white dark:bg-black left-[-5px] border-r-0 border-[2px] border-sky-light dark:border-ink-dark py-2 px-3 text-sm">
                             <p className="mt-[2px] text-slate-400">
                                 {(Prefix as IconType) && <Prefix />}
                                 {typeof Prefix === "string" && String(Prefix)}
@@ -124,7 +124,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         {children}
                     </input>
                     {Suffix && (
-                        <div className="rounded-r-lg relative z-10 bg-white dark:bg-black right-2 border-[1px] border-sky-light dark:border-ink-dark border-r-[1px] py-2 px-3 text-sm">
+                        <div className="rounded-r-lg relative z-10 bg-white dark:bg-black right-[-5px] border-l-0 border-[2px] border-sky-light dark:border-ink-dark py-2 px-3 text-sm">
                             <p className="mt-[2px] text-slate-400">
                                 {(Suffix as IconType) && <Suffix />}
                                 {typeof Suffix === "string" && String(Suffix)}
