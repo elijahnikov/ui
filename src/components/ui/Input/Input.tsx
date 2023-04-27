@@ -144,8 +144,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         <AiOutlineCloseCircle
                             onClick={() => clearInput()}
                             className={`${
-                                Suffix ? "right-[20%]" : "right-[5%]"
-                            } bg-white dark:bg-black pl-2 pr-3 shadow-lg absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-10 w-10 top-[50%] right-[1%]`}
+                                Suffix && fullWidth
+                                    ? "right-[20%] mr-12"
+                                    : Suffix
+                                    ? "right-[21%]"
+                                    : "right-[1%]"
+                            } bg-white rounded-lg dark:bg-black pl-2 pr-3 shadow-lg absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-10 w-10 top-[50%] right-[1%]`}
                         />
                     )}
                     {/* if suffix is passed */}
