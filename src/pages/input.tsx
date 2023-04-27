@@ -1,4 +1,5 @@
 import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
+import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import Input from "@/components/ui/Input/Input";
@@ -125,6 +126,10 @@ const InputPage = ({}: InputPageProps) => {
                 </div>
                 <CodeBlock code={inputCode.clearable} />
             </div>
+            <GitHubRedirect
+                page="Input"
+                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Input/Input.tsx"
+            />
         </Layout>
     );
 };
