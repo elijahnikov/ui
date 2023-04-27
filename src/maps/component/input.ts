@@ -17,6 +17,10 @@ export const inputMenuMap: MenuMap[] = [
         label: "Prefix and Suffix",
         href: "#prefixSuffix",
     },
+    {
+        label: "Clearable",
+        href: "#clearable",
+    },
 ];
 
 export const inputCode = {
@@ -58,4 +62,29 @@ export const inputCode = {
     placeholder="Username"
     prefix={"supercrumble.com/@"}
 />`,
+
+    clearable: `import Input from "@/components/ui/Input/Input";
+
+const [clearableText, setClearableText] = useState<string>("");
+
+const [clearableWithSuffixText, setClearableWithSuffixText] =
+    useState<string>("");
+
+
+<Input
+    value={clearableText}
+    change={setClearableText}
+    clearable
+    placeholder="Clearable"
+/>
+
+<Input
+    fullWidth
+    value={clearableWithSuffixText}
+    change={setClearableWithSuffixText}
+    suffix={AiOutlineUpload}
+    clearable
+    placeholder="Clearable with suffix and full width"
+/>
+`,
 };

@@ -1,5 +1,6 @@
 // Components
 import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
+import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 
@@ -136,14 +137,10 @@ const ButtonPage = ({}: buttonProps) => {
                 </div>
                 <CodeBlock code={buttonCode.buttonWithIcon} />
             </div>
-            <a
+            <GitHubRedirect
+                page="Button"
                 href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Button/Button.tsx"
-                target="_self"
-                className="dark:text-slate-500 text-slate-500 flex justify-center w-full mt-[50px] h-[150px] mb-[100px]"
-            >
-                <AiFillGithub className="h-5 w-5" />
-                <p className="text-sm ml-2">View Button on GitHub.</p>
-            </a>
+            />
         </Layout>
     );
 };

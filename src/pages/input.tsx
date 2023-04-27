@@ -1,4 +1,5 @@
 import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
+import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import Input from "@/components/ui/Input/Input";
@@ -15,6 +16,9 @@ import { Bs0Circle } from "react-icons/bs";
 interface InputPageProps {}
 
 const InputPage = ({}: InputPageProps) => {
+    const [clearableText, setClearableText] = useState<string>("");
+    const [clearableWithSuffixText, setClearableWithSuffixText] =
+        useState<string>("");
     return (
         <Layout title="Input - Supercrumble UI" menuMap={inputMenuMap}>
             <div className="mb-[40px]">
@@ -93,6 +97,39 @@ const InputPage = ({}: InputPageProps) => {
                 </div>
                 <CodeBlock code={inputCode.prefixSuffix} />
             </div>
+
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="clearable"
+                ></a>
+                <h4>Clearable</h4>
+                <p className="mb-[30px]">
+                    Add the option to clear text with the a simple press of the
+                    icon.
+                </p>
+                <div className="border-[1px] mb-[30px] space-y-5 p-5 rounded-xl dark:border-slate-700">
+                    <Input
+                        value={clearableText}
+                        change={setClearableText}
+                        clearable
+                        placeholder="Clearable"
+                    />
+                    <Input
+                        fullWidth
+                        value={clearableWithSuffixText}
+                        change={setClearableWithSuffixText}
+                        suffix={AiOutlineUpload}
+                        clearable
+                        placeholder="Clearable with suffix and full width"
+                    />
+                </div>
+                <CodeBlock code={inputCode.clearable} />
+            </div>
+            <GitHubRedirect
+                page="Input"
+                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Input/Input.tsx"
+            />
         </Layout>
     );
 };
