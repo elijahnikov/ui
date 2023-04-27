@@ -1,5 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React, { useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { InputHTMLAttributes } from "react";
 import { IconType } from "react-icons";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -63,36 +63,32 @@ interface InputProps
     prefix?: IconType | string;
     suffix?: IconType | string;
     clearable?: boolean;
+    change?: Function;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    (
-        {
-            intent,
-            children,
-            className,
-            size,
-            disabled,
-            error,
-            errorText,
-            prefix: Prefix,
-            suffix: Suffix,
-            clearable,
-            placeholder,
-            fullWidth,
-            label,
-            ...props
-        },
-        ref
-    ) => {
+    ({
+        intent,
+        children,
+        className,
+        size,
+        disabled,
+        error,
+        errorText,
+        prefix: Prefix,
+        suffix: Suffix,
+        clearable,
+        placeholder,
+        fullWidth,
+        value,
+        change,
+        label,
+        ...props
+    }) => {
         const inputRef = useRef<HTMLInputElement | null>(null);
-
         const clearInput = () => {
-            if (inputRef.current) {
-                inputRef.current.value = "";
-            }
+            change && change("");
         };
-
         return (
             <>
                 {/* if label is passed */}
@@ -128,6 +124,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         disabled={disabled}
                         placeholder={placeholder}
                         {...props}
+                        value={value}
+                        onChange={(e) => change && change(e.target.value)}
                         className={input({
                             intent,
                             size,
@@ -142,12 +140,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         {children}
                     </input>
                     {/* if clearable is passed */}
-                    {clearable && (
+                    {clearable && value && !disabled && (
                         <AiOutlineCloseCircle
                             onClick={() => clearInput()}
                             className={`${
                                 Suffix ? "right-[20%]" : "right-[5%]"
-                            } shadow-lg absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-5 w-5 top-[50%] right-[5%]`}
+                            } bg-white dark:bg-black pl-2 pr-3 shadow-lg absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-10 w-10 top-[50%] right-[1%]`}
                         />
                     )}
                     {/* if suffix is passed */}
