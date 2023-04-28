@@ -27,7 +27,7 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
             ],
         },
         error: {
-            true: "border-red-400 dark:border-red-400",
+            true: "border-red-500 dark:border-red-500",
         },
     },
     compoundVariants: [
@@ -86,9 +86,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         ...props
     }) => {
         const inputRef = useRef<HTMLInputElement | null>(null);
+
         const clearInput = () => {
             change && change("");
         };
+
         return (
             <>
                 {/* if label is passed */}
@@ -115,7 +117,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                                           <Prefix className="h-6 w-6 relative top-[-1px] fill-sky-dark dark:fill-ink-lightest" />
                                       )
                                     : null}
-                                {typeof Prefix === "string" && String(Prefix)}
+                                {typeof Prefix === "string"
+                                    ? String(Prefix)
+                                    : null}
                             </p>
                         </div>
                     )}
@@ -161,7 +165,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                                           <Suffix className="h-6 w-6 relative top-[-1px] fill-sky-dark dark:fill-ink-lightest" />
                                       )
                                     : null}
-                                {typeof Suffix === "string" && String(Suffix)}
+                                {typeof Suffix === "string"
+                                    ? String(Suffix)
+                                    : null}
                             </p>
                         </div>
                     )}

@@ -70,7 +70,6 @@ const [clearableText, setClearableText] = useState<string>("");
 const [clearableWithSuffixText, setClearableWithSuffixText] =
     useState<string>("");
 
-
 <Input
     value={clearableText}
     change={setClearableText}
