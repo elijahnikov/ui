@@ -126,6 +126,32 @@ const InputPage = ({}: InputPageProps) => {
                 </div>
                 <CodeBlock code={inputCode.clearable} />
             </div>
+
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="errors"
+                ></a>
+                <h4>Errors</h4>
+                <p className="mb-[30px]">
+                    Show feedback when the user has inputed incorrectly.
+                </p>
+                <div className="border-[1px] mb-[30px] space-y-5 p-5 rounded-xl dark:border-slate-700">
+                    <Input error placeholder="Simple error" />
+                    <Input
+                        error
+                        errorText="This is an example error, incorrect value etc."
+                        placeholder="Error with text"
+                    />
+                    <Input
+                        error
+                        fullWidth
+                        errorText="This is an example error"
+                        placeholder="Error with text"
+                    />
+                </div>
+                <CodeBlock code={inputCode.clearable} />
+            </div>
             <GitHubRedirect
                 page="Input"
                 href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Input/Input.tsx"
