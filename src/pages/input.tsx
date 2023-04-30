@@ -37,6 +37,10 @@ const InputPage = ({}: InputPageProps) => {
                     <Input placeholder="Placeholder..." />
                 </div>
                 <CodeBlock code={inputCode.default} />
+                <div className="mt-[30px] mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                    <Input label="Field" placeholder="Placeholder..." />
+                </div>
+                <CodeBlock code={inputCode.defaultWithLabel} />
             </div>
 
             <div className="mt-[50px]">
@@ -125,6 +129,32 @@ const InputPage = ({}: InputPageProps) => {
                     />
                 </div>
                 <CodeBlock code={inputCode.clearable} />
+            </div>
+
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="errors"
+                ></a>
+                <h4>Errors</h4>
+                <p className="mb-[30px]">
+                    Show feedback when the user has inputed incorrectly.
+                </p>
+                <div className="border-[1px] mb-[30px] space-y-5 p-5 rounded-xl dark:border-slate-700">
+                    <Input error placeholder="Simple error" />
+                    <Input
+                        error
+                        errorText="This is an example error, incorrect value etc."
+                        placeholder="Error with text"
+                    />
+                    <Input
+                        error
+                        fullWidth
+                        errorText="This is another example error; errors will wrap to match the width of the input component."
+                        placeholder="Error with text"
+                    />
+                </div>
+                <CodeBlock code={inputCode.error} />
             </div>
             <GitHubRedirect
                 page="Input"

@@ -98,7 +98,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Checkbox",
                 value: "checkbox",
                 href: "/checkbox",
-                disabled: true,
+                disabled: false,
             },
             {
                 id: 11,

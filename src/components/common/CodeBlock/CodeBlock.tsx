@@ -14,7 +14,9 @@ const CodeBlock = ({ code }: CodeBlockProps) => {
     return (
         <div className="relative inline-block text-sm w-full flex-col dark:border-slate-600 dark:bg-slate-800 bg-gray-100 dark:text-white rounded-lg p-[25px] border-[1px] border-gray-300">
             <pre className="w-[95%] float-left">
-                <code className="language-javascript">{code}</code>
+                <code className="whitespace-pre-wrap language-javascript">
+                    {code}
+                </code>
             </pre>
             <div className="float-right w-[5%] absolute right-5 bottom-5">
                 <Button
