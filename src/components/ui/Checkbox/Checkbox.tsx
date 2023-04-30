@@ -5,17 +5,18 @@ const checkbox = cva([], {
     variants: {
         intent: {
             default:
-                "relative h-4 w-4 top-1 accent-primary-base dark:hover:accent-primary-dark hover:accent-primary-dark dark:accent-primary-base rounded cursor-pointer",
+                "rounded-lg relative h-4 w-4 top-1 accent-primary-base dark:hover:accent-primary-dark hover:accent-primary-dark dark:accent-primary-base rounded cursor-pointer",
         },
         size: {
-            sm: "",
-            base: "",
+            sm: "h-3 w-3 text-sm",
+            base: "h-4 w-4 text-md",
+            large: "h-5 w-5 text-md",
         },
         disabled: {
-            true: "",
+            true: "cursor-not-allowed pointer-events-none",
         },
         error: {
-            true: "",
+            true: "border-[2px] border-red-500",
         },
     },
     defaultVariants: {
@@ -65,8 +66,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
                         className={checkbox({
                             intent,
                             size,
-                            disabled,
                             error,
+                            disabled,
                             className,
                         })}
                         disabled={disabled}
