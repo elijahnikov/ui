@@ -21,6 +21,10 @@ export const inputMenuMap: MenuMap[] = [
         label: "Clearable",
         href: "#clearable",
     },
+    {
+        label: "Errors",
+        href: "#errors",
+    },
 ];
 
 export const inputCode = {
@@ -84,6 +88,22 @@ const [clearableWithSuffixText, setClearableWithSuffixText] =
     suffix={AiOutlineUpload}
     clearable
     placeholder="Clearable with suffix and full width"
+/>`,
+
+    error: `import Input from "@/components/ui/Input/Input";
+
+<Input error placeholder="Simple error" />
+
+<Input
+    error
+    errorText="This is an example error, incorrect value etc."
+    placeholder="Error with text"
 />
-`,
+
+<Input
+    error
+    fullWidth
+    errorText="This is another example error; errors will wrap to match the width of the input component."
+    placeholder="Error with text"
+/>`,
 };
