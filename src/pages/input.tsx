@@ -150,7 +150,7 @@ const InputPage = ({}: InputPageProps) => {
                         placeholder="Error with text"
                     />
                 </div>
-                <CodeBlock code={inputCode.clearable} />
+                <CodeBlock code={inputCode.error} />
             </div>
             <GitHubRedirect
                 page="Input"
