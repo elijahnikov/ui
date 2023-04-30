@@ -32,6 +32,10 @@ export const inputCode = {
 
 <Input placeholder="Placeholder..." />`,
 
+    defaultWithLabel: `import Input from "@/components/ui/Input/Input";
+
+<Input label="Field" placeholder="Placeholder..." />`,
+
     sizes: `import Input from "@/components/ui/Input/Input";
 
 <Input size="sm" placeholder="Small" />
