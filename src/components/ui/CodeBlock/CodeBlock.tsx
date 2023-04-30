@@ -4,9 +4,10 @@ import Button from "@/components/ui/Button/Button";
 
 interface CodeBlockProps {
     code: string;
+    copyable?: boolean;
 }
 
-const CodeBlock = ({ code }: CodeBlockProps) => {
+const CodeBlock = ({ code, copyable = true }: CodeBlockProps) => {
     const copyToClipboard = () => {
         copy(code);
     };
@@ -19,14 +20,16 @@ const CodeBlock = ({ code }: CodeBlockProps) => {
                 </code>
             </pre>
             <div className="float-right w-[5%] absolute right-5 bottom-5">
-                <Button
-                    onClick={() => copyToClipboard()}
-                    loading={false}
-                    intent={"transparent"}
-                    size="sm"
-                >
-                    <IoMdClipboard className="float-right h-5 w-5" />
-                </Button>
+                {copyable && (
+                    <Button
+                        onClick={() => copyToClipboard()}
+                        loading={false}
+                        intent={"transparent"}
+                        size="sm"
+                    >
+                        <IoMdClipboard className="float-right h-5 w-5" />
+                    </Button>
+                )}
             </div>
         </div>
     );

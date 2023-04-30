@@ -1,5 +1,5 @@
 // Components
-import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
+import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
