@@ -37,6 +37,10 @@ const InputPage = ({}: InputPageProps) => {
                     <Input placeholder="Placeholder..." />
                 </div>
                 <CodeBlock code={inputCode.default} />
+                <div className="mt-[30px] mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                    <Input label="Field" placeholder="Placeholder..." />
+                </div>
+                <CodeBlock code={inputCode.defaultWithLabel} />
             </div>
 
             <div className="mt-[50px]">
