@@ -41,6 +41,11 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
             intent: "default",
             className: "bg-white dark:bg-black",
         },
+        {
+            error: true,
+            intent: "default",
+            className: "focus:border-red-500 dark:focus:border-red-500",
+        },
     ],
     defaultVariants: {
         size: "base",
@@ -170,6 +175,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                                     : null}
                             </p>
                         </div>
+                    )}
+                    {/* if errorText is passed */}
+                    {errorText && (
+                        <p
+                            // use offsetWidth to set the width of the error text
+                            // same as the input width
+                            className={`${
+                                inputRef.current &&
+                                `w-[${inputRef.current.offsetWidth}px]`
+                            } mt-[5px] ml-[2px] text-red-500`}
+                        >
+                            {errorText}
+                        </p>
                     )}
                 </div>
             </>

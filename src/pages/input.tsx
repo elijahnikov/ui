@@ -146,7 +146,7 @@ const InputPage = ({}: InputPageProps) => {
                     <Input
                         error
                         fullWidth
-                        errorText="This is an example error"
+                        errorText="This is another example error; errors will wrap to match the width of the input component."
                         placeholder="Error with text"
                     />
                 </div>
