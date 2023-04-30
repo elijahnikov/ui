@@ -70,7 +70,10 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                 </div>
                 <CodeBlock code={checkboxCode.fullWidth} />
             </div>
-            <GitHubRedirect page="Checkbox" href="" />
+            <GitHubRedirect
+                page="Checkbox"
+                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Checkbox/Checkbox.tsx"
+            />
         </Layout>
     );
 };
