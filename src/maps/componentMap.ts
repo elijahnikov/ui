@@ -140,7 +140,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Code Block",
                 value: "codeBlock",
                 href: "/codeBlock",
-                disabled: true,
+                disabled: false,
             },
         ],
     },
