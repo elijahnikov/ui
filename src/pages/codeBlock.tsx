@@ -1,3 +1,4 @@
+import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
@@ -38,6 +39,7 @@ const CodeBlockPage = ({}: CodeBlockPageProps) => {
                 </div>
                 <CodeBlock code={codeBlockCode.copyable} />
             </div>
+            <GitHubRedirect page="Code Block" href="" />
         </Layout>
     );
 };
