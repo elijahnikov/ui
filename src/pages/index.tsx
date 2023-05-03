@@ -7,17 +7,7 @@ export default function Home() {
 
     return (
         <Layout>
-            {/* <h1>hello</h1> */}
-            <div className="w-[500px]">
-                <InputArea
-                    errorText="This is an error it will hopefully wrap"
-                    label={"Description"}
-                    value={clearableText}
-                    change={setClearableText}
-                    clearable
-                    placeholder="enter"
-                />
-            </div>
+            <h1>hello</h1>
         </Layout>
     );
 }

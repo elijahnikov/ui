@@ -18,7 +18,6 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
         },
         fullWidth: {
             true: "w-[100%]",
-            false: "w-[50%]",
         },
         disabled: {
             true: [
@@ -65,7 +64,6 @@ interface InputAreaProps
     error?: boolean;
     errorText?: string;
     disabled?: boolean;
-    clearable?: boolean;
     change?: Function;
 }
 
@@ -78,7 +76,6 @@ const InputArea = React.forwardRef<HTMLTextAreaElement, InputAreaProps>(
         disabled,
         error,
         errorText,
-        clearable,
         placeholder,
         value,
         change,
@@ -117,26 +114,19 @@ const InputArea = React.forwardRef<HTMLTextAreaElement, InputAreaProps>(
                             error,
                             fullWidth,
                         })}
-                    >
-                        {children}
-                    </textarea>
-                    {/* if clearable is passed */}
-                    {clearable && value && !disabled && (
-                        <AiOutlineCloseCircle
-                            className="bg-white rounded-lg dark:bg-black absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-6 w-6 top-[30%] right-[52%]"
-                            onClick={() => clearInput()}
-                        />
-                    )}
+                    />
                     {/* if errorText is passed */}
                     {errorText && (
-                        <p
+                        <div
                             className={`${
                                 inputAreaRef.current &&
                                 `w-[${inputAreaRef.current.offsetWidth}px]`
-                            } mt-[5px] ml-[2px] text-red-500`}
+                            }`}
                         >
-                            {errorText}
-                        </p>
+                            <p className={`mt-[5px] ml-[2px] text-red-500`}>
+                                {errorText}
+                            </p>
+                        </div>
                     )}
                 </div>
             </>
