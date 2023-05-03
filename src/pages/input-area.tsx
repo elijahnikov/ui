@@ -1,3 +1,4 @@
+import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
@@ -22,13 +23,13 @@ const InputAreaPage = ({}: InputAreaPageProps) => {
                     id="usage"
                 ></a>
                 <h4 className="mb-[30px]">Usage</h4>
-                <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <InputArea placeholder="Placeholder..." />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputAreaCode.default} />
-                <div className=" mt-[30px] mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <InputArea label="Field" placeholder="Placeholder..." />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputAreaCode.defaultWithLabel} />
             </div>
         </Layout>

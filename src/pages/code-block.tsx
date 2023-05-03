@@ -1,3 +1,4 @@
+import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
@@ -22,9 +23,9 @@ const CodeBlockPage = ({}: CodeBlockPageProps) => {
                     id="usage"
                 ></a>
                 <h4 className="mb-[30px]">Usage</h4>
-                <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <CodeBlock code="Example code" />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={codeBlockCode.usage} />
             </div>
 
@@ -34,9 +35,9 @@ const CodeBlockPage = ({}: CodeBlockPageProps) => {
                     id="copyable"
                 ></a>
                 <h4 className="mb-[30px]">Copy</h4>
-                <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <CodeBlock copyable={false} code="Show/hide copy button" />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={codeBlockCode.copyable} />
             </div>
             <GitHubRedirect page="Code Block" href="" />

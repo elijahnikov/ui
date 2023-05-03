@@ -12,6 +12,7 @@ import {
     AiOutlineUpload,
 } from "react-icons/ai";
 import { Bs0Circle } from "react-icons/bs";
+import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 
 interface InputPageProps {}
 
@@ -33,13 +34,13 @@ const InputPage = ({}: InputPageProps) => {
                     id="usage"
                 ></a>
                 <h4 className="mb-[30px]">Usage</h4>
-                <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <Input placeholder="Placeholder..." />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.default} />
-                <div className="mt-[30px] mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <Input label="Field" placeholder="Placeholder..." />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.defaultWithLabel} />
             </div>
 
@@ -49,11 +50,11 @@ const InputPage = ({}: InputPageProps) => {
                     id="sizes"
                 ></a>
                 <h4 className="mb-[30px]">Sizes</h4>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-y-5">
+                <ExampleBlock className="space-y-5">
                     <Input size="sm" placeholder="Small" />
                     <Input size="base" placeholder="Default" />
                     <Input size="large" placeholder="Large" />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.sizes} />
             </div>
 
@@ -63,10 +64,10 @@ const InputPage = ({}: InputPageProps) => {
                     id="disabled"
                 ></a>
                 <h4 className="mb-[30px]">Disabled</h4>
-                <div className="border-[1px] mb-[30px] flex p-5 rounded-xl dark:border-slate-700">
+                <ExampleBlock className="space-y-5">
                     <Input disabled placeholder="Disabled with placeholder" />
                     <Input disabled value={"Disabled with value"} />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.disabled} />
             </div>
 
@@ -82,7 +83,7 @@ const InputPage = ({}: InputPageProps) => {
                     information. Supports the use of icons from the popular
                     library ReactIcons.
                 </p>
-                <div className="border-[1px] mb-[30px] space-y-5 p-5 rounded-xl dark:border-slate-700">
+                <ExampleBlock className="space-y-5">
                     <Input placeholder="E-mail" prefix={AiOutlineMail} />
                     <Input
                         placeholder="Password"
@@ -98,7 +99,7 @@ const InputPage = ({}: InputPageProps) => {
                         placeholder="Username"
                         prefix={"supercrumble.com/@"}
                     />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.prefixSuffix} />
             </div>
 
@@ -112,7 +113,7 @@ const InputPage = ({}: InputPageProps) => {
                     Add the option to clear text with the a simple press of the
                     icon.
                 </p>
-                <div className="border-[1px] mb-[30px] space-y-5 p-5 rounded-xl dark:border-slate-700">
+                <ExampleBlock className="space-y-5">
                     <Input
                         value={clearableText}
                         change={setClearableText}
@@ -127,7 +128,7 @@ const InputPage = ({}: InputPageProps) => {
                         clearable
                         placeholder="Clearable with suffix and full width"
                     />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.clearable} />
             </div>
 
@@ -140,7 +141,7 @@ const InputPage = ({}: InputPageProps) => {
                 <p className="mb-[30px]">
                     Show feedback when the user has inputed incorrectly.
                 </p>
-                <div className="border-[1px] mb-[30px] space-y-5 p-5 rounded-xl dark:border-slate-700">
+                <ExampleBlock className="space-y-5">
                     <Input error placeholder="Simple error" />
                     <Input
                         error
@@ -153,7 +154,7 @@ const InputPage = ({}: InputPageProps) => {
                         errorText="This is another example error; errors will wrap to match the width of the input component."
                         placeholder="Error with text"
                     />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={inputCode.error} />
             </div>
             <GitHubRedirect
