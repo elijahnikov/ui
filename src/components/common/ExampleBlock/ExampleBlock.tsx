@@ -8,7 +8,7 @@ const ExampleBlock = React.forwardRef<HTMLDivElement, ExampleBlockProps>(
     ({ children, className, ...props }) => {
         return (
             <div
-                className={`${className} mt-[30px] mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl`}
+                className={`${className} bg-gradient-to-r from-indigo-100 to-purple-200 dark:from-slate-500 dark:to-slate-800 mt-[30px] mb-[30px] p-5 rounded-xl`}
                 {...props}
             >
                 {children}
