@@ -45,6 +45,13 @@ export const componentMap: ComponentSectionMapType[] = [
                 href: "/stack",
                 disabled: true,
             },
+            {
+                id: 5,
+                title: "Triple Column",
+                value: "triple_column",
+                href: "/triple-column",
+                disabled: false,
+            },
         ],
     },
     {
