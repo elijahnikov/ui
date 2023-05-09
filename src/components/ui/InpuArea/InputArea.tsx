@@ -84,7 +84,7 @@ const InputArea = React.forwardRef<HTMLTextAreaElement, InputAreaProps>(
         className,
         size,
         disabled,
-        error,
+        error = false,
         errorText,
         placeholder,
         value,
@@ -133,7 +133,7 @@ const InputArea = React.forwardRef<HTMLTextAreaElement, InputAreaProps>(
                                 `w-[${inputAreaRef.current.offsetWidth}px]`
                             }`}
                         >
-                            <p className={`mt-[5px] ml-[2px] text-red-500`}>
+                            <p className={`ml-[2px] text-red-500`}>
                                 {errorText}
                             </p>
                         </div>

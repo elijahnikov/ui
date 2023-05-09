@@ -34,4 +34,14 @@ export const inputAreaCode = {
 />
 
 <InputArea disabled value={"Disabeld with value"} />`,
+
+    error: `import InputArea from "@/components/ui/InpuArea/InputArea";
+    
+<InputArea error placeholder="Simple error" />
+                
+<InputArea
+    error
+    errorText="An error with example text"
+    placeholder="Error with text"
+/>`,
 };

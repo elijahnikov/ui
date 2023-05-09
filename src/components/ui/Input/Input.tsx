@@ -51,7 +51,7 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
             error: false,
             intent: "default",
             className:
-                "border-sky-light dark:border-slate-800 border-sky-light focus:border-primary-base dark:focus:border-primary-base dark:border-slate-800",
+                "border-sky-light dark:border-slate-800 focus:border-primary-base dark:focus:border-primary-base dark:border-slate-800",
         },
     ],
     defaultVariants: {
@@ -85,7 +85,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         className,
         size,
         disabled,
-        error,
+        error = false,
         errorText,
         prefix: Prefix,
         suffix: Suffix,

@@ -70,13 +70,14 @@ const InputAreaPage = ({}: InputAreaPageProps) => {
                 ></a>
                 <h4 className="mb-[30px]">Errors</h4>
                 <ExampleBlock className="space-y-5">
+                    <InputArea error placeholder="Simple error" />
                     <InputArea
-                        disabled
-                        placeholder="Disabled with placeholder"
+                        error
+                        errorText="An error with example text"
+                        placeholder="Error with text"
                     />
-                    <InputArea disabled value={"Disabeld with value"} />
                 </ExampleBlock>
-                <CodeBlock code={inputAreaCode.disabled} />
+                <CodeBlock code={inputAreaCode.error} />
             </div>
 
             <GitHubRedirect
