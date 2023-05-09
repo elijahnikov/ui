@@ -3,54 +3,64 @@ import React, { useMemo, useRef } from "react";
 import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
-    variants: {
-        intent: {
-            default: [
-                "placeholder-ink-lighter text-black border-sky-light focus:border-primary-base dark:focus:border-primary-base",
-                "dark:placeholder-sky-dark dark:bg-black dark:border-slate-800 dark:text-white",
-            ],
+const input = cva(
+    ["w-[50%] py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"],
+    {
+        variants: {
+            intent: {
+                default: [
+                    "placeholder-ink-lighter text-black",
+                    "dark:placeholder-sky-dark dark:bg-black dark:text-white",
+                ],
+            },
+            size: {
+                base: "py-2",
+                sm: "text-sm",
+                large: "py-4",
+            },
+            fullWidth: {
+                true: "w-[100%]",
+            },
+            disabled: {
+                true: [
+                    "placeholder-sky-base text-sky-dark border-sky-lighter bg-sky-lightest cursor-not-allowed pointer-events-none",
+                    "dark:placeholder:ink-base dark:text-ink-base dark:border-ink-dark dark:bg-ink-darker",
+                ],
+            },
+            error: {
+                true: "border-red-500 dark:border-red-500",
+            },
         },
-        size: {
-            base: "py-2",
-            sm: "text-sm",
-            large: "py-4",
-        },
-        fullWidth: {
-            true: "w-[100%]",
-        },
-        disabled: {
-            true: [
-                "placeholder-sky-base text-sky-dark border-sky-lighter bg-sky-lightest cursor-not-allowed pointer-events-none",
-                "dark:placeholder:ink-base dark:text-ink-base dark:border-ink-dark dark:bg-ink-darker",
-            ],
-        },
-        error: {
-            true: "border-red-500 dark:border-red-500",
-        },
-    },
-    compoundVariants: [
-        {
-            disabled: true,
+        compoundVariants: [
+            {
+                disabled: true,
+                intent: "default",
+                className: " bg-gray-200 dark:bg-gray-950 text-red-400",
+            },
+            {
+                disabled: false,
+                intent: "default",
+                className: "bg-white dark:bg-black",
+            },
+            {
+                error: true,
+                intent: "default",
+                className:
+                    "border-red-500 dark:border-red-500 focus:border-red-500 dark:focus:border-red-500",
+            },
+            {
+                error: false,
+                intent: "default",
+                className:
+                    "border-sky-light dark:border-slate-800 border-sky-light focus:border-primary-base dark:focus:border-primary-base dark:border-slate-800",
+            },
+        ],
+        defaultVariants: {
+            size: "base",
             intent: "default",
-            className: " bg-gray-200 dark:bg-gray-950 text-red-400",
         },
-        {
-            disabled: false,
-            intent: "default",
-            className: "bg-white dark:bg-black",
-        },
-        {
-            error: true,
-            intent: "default",
-            className: "focus:border-red-500 dark:focus:border-red-500",
-        },
-    ],
-    defaultVariants: {
-        size: "base",
-        intent: "default",
-    },
-});
+    }
+);
 
 interface InputAreaProps
     extends Omit<
@@ -74,7 +84,7 @@ const InputArea = React.forwardRef<HTMLTextAreaElement, InputAreaProps>(
         className,
         size,
         disabled,
-        error,
+        error = false,
         errorText,
         placeholder,
         value,
@@ -123,7 +133,7 @@ const InputArea = React.forwardRef<HTMLTextAreaElement, InputAreaProps>(
                                 `w-[${inputAreaRef.current.offsetWidth}px]`
                             }`}
                         >
-                            <p className={`mt-[5px] ml-[2px] text-red-500`}>
+                            <p className={`ml-[2px] text-red-500`}>
                                 {errorText}
                             </p>
                         </div>
