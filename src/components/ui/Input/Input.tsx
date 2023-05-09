@@ -8,8 +8,8 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
     variants: {
         intent: {
             default: [
-                "placeholder-ink-lighter text-black border-sky-light focus:border-primary-base dark:focus:border-primary-base",
-                "dark:placeholder-sky-dark dark:bg-black dark:border-slate-800 dark:text-white",
+                "placeholder-ink-lighter text-black",
+                "dark:placeholder-sky-dark dark:bg-black dark:text-white",
             ],
         },
         size: {
@@ -44,7 +44,14 @@ const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
         {
             error: true,
             intent: "default",
-            className: "focus:border-red-500 dark:focus:border-red-500",
+            className:
+                "border-red-500 dark:border-red-500 focus:border-red-500 dark:focus:border-red-500",
+        },
+        {
+            error: false,
+            intent: "default",
+            className:
+                "border-sky-light dark:border-slate-800 border-sky-light focus:border-primary-base dark:focus:border-primary-base dark:border-slate-800",
         },
     ],
     defaultVariants: {
