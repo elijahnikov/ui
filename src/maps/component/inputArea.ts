@@ -9,6 +9,10 @@ export const inputAreaMenuMap: MenuMap[] = [
         label: "Sizes",
         href: "#sizes",
     },
+    {
+        label: "Errors",
+        href: "#errors",
+    },
 ];
 
 export const inputAreaCode = {
