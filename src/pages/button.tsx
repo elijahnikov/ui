@@ -17,6 +17,7 @@ import {
     AiFillSave,
     AiOutlineCloudDownload,
 } from "react-icons/ai";
+import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 
 interface buttonProps {}
 
@@ -38,9 +39,9 @@ const ButtonPage = ({}: buttonProps) => {
                 ></a>
                 <h4 className="mb-[30px]">Usage</h4>
                 {/* PRIMARY BUTTON */}
-                <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <Button intent="primary">Primary</Button>
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={buttonCode.primary} />
             </div>
 
@@ -50,7 +51,7 @@ const ButtonPage = ({}: buttonProps) => {
                     id="variants"
                 ></a>
                 <h4 className="mb-[30px]">Variants</h4>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
+                <ExampleBlock className="space-x-5">
                     <Button intent={"primary"}>Primary</Button>
                     <Button intent={"secondary"}>Secondary</Button>
                     <Button intent={"outline"}>Outline</Button>
@@ -58,7 +59,7 @@ const ButtonPage = ({}: buttonProps) => {
                     <Button disabled intent={"primary"}>
                         Disabled
                     </Button>
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={buttonCode.variants} />
             </div>
 
@@ -68,7 +69,7 @@ const ButtonPage = ({}: buttonProps) => {
                     id="sizes"
                 ></a>
                 <h4 className="mb-[30px]">Sizes</h4>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
+                <ExampleBlock className="space-x-5">
                     <Button intent={"primary"} size={"sm"}>
                         Small
                     </Button>
@@ -88,7 +89,7 @@ const ButtonPage = ({}: buttonProps) => {
                             Full Width
                         </Button>
                     </div>
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={buttonCode.sizes} />
             </div>
 
@@ -103,14 +104,14 @@ const ButtonPage = ({}: buttonProps) => {
                     signify its loading state, for example, when a user performs
                     a submit action.
                 </p>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
+                <ExampleBlock className="space-x-5">
                     <Button intent={"primary"} loading>
                         Primary
                     </Button>
                     <Button intent={"secondary"} loading>
                         Primary
                     </Button>
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={buttonCode.loadingState} />
             </div>
 
@@ -124,7 +125,7 @@ const ButtonPage = ({}: buttonProps) => {
                     {`You can add left or right icons to your Buttons by passing your chosen icon from the 
                     "react-icons" library in order to add meaning or give more context to specific button actions.`}
                 </p>
-                <div className="border-[1px] mb-[30px] p-5 rounded-xl dark:border-slate-700 space-x-5">
+                <ExampleBlock className="space-x-5">
                     <Button intent={"primary"} leftIcon={AiFillSave}>
                         Save
                     </Button>
@@ -134,7 +135,7 @@ const ButtonPage = ({}: buttonProps) => {
                     >
                         Download
                     </Button>
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={buttonCode.buttonWithIcon} />
             </div>
             <GitHubRedirect
