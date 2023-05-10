@@ -12,7 +12,7 @@ export default function Home() {
         // </Layout>
         <TripleColumn>
             <TripleColumn.Left>
-                <p>test</p>
+                <h1>test</h1>
             </TripleColumn.Left>
             <TripleColumn.Middle>
                 <p>test1</p>
