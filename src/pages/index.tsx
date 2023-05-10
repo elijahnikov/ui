@@ -11,15 +11,9 @@ export default function Home() {
         //     <h1>hello</h1>
         // </Layout>
         <TripleColumn>
-            <TripleColumn.Left>
-                <h1>test</h1>
-            </TripleColumn.Left>
-            <TripleColumn.Middle>
-                <p>test1</p>
-            </TripleColumn.Middle>
-            <TripleColumn.Right>
-                <p>test2</p>
-            </TripleColumn.Right>
+            <TripleColumn.Left>Left column</TripleColumn.Left>
+            <TripleColumn.Middle>Middle column</TripleColumn.Middle>
+            <TripleColumn.Right>Right column</TripleColumn.Right>
         </TripleColumn>
     );
 }
