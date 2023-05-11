@@ -24,11 +24,11 @@ const button = cva(
                 ],
                 outline: [
                     "bg-none text-primary-base border-[1px] border-primary-base hover:border-primary-dark hover:text-primary-dark active:bg-primary-lightest dark:active:bg-primary-light",
-                    "dark:bg-none dark:text-primary-light dark:border-primary-light dark:hover:border-primary-base dark:hover:text-primary-base",
+                    "dark:bg-none dark:text-primary-base dark:border-primary-base dark:hover:border-primary-base dark:hover:text-primary-base",
                 ],
                 transparent: [
                     "bg-none shadow-none border-none text-primary-base hover:bg-primary-lightest active:bg-primary-lighter",
-                    "dark:text-primary-light dark:hover:text-primary-base dark:hover:bg-primary-lighter dark:active:bg-primary-light",
+                    "dark:text-primary-base dark:hover:text-primary-base dark:hover:bg-primary-lighter dark:active:bg-primary-light",
                 ],
             },
             size: {
