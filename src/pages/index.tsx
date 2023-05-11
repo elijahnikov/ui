@@ -11,8 +11,12 @@ export default function Home() {
         //     <h1>hello</h1>
         // </Layout>
         <TripleColumn>
-            <TripleColumn.Left>Left column</TripleColumn.Left>
-            <TripleColumn.Middle>Middle column</TripleColumn.Middle>
+            <TripleColumn.Left className="bg-red-400">
+                Left column
+            </TripleColumn.Left>
+            <TripleColumn.Middle onClick={() => console.log("Clicked")}>
+                Middle column
+            </TripleColumn.Middle>
             <TripleColumn.Right>Right column</TripleColumn.Right>
         </TripleColumn>
     );

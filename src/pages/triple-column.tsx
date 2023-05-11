@@ -54,6 +54,35 @@ const TripleColumnPage = ({}: TripleColumnPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={tripleColumnCode.usage} />
             </div>
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="props"
+                ></a>
+                <h4>Props</h4>
+                <p className="mb-[30px]">
+                    Each column can be passed specific CSS styling and/or div
+                    props such as onClick.
+                </p>
+                {/* PRIMARY BUTTON */}
+                <ExampleBlock>
+                    <div className="h-[200px]">
+                        <div className="p-[10px] bg-red-400 rounded-lg h-[100%] float-left w-[25%]">
+                            Left column
+                        </div>
+                        <div
+                            onClick={() => console.log("Clicked")}
+                            className="p-[10px] border-primary-darker dark:bg-primary-base bg-primary-lighter border-[4px] rounded-lg h-[100%] inline-block w-[50%]"
+                        >
+                            Middle column
+                        </div>
+                        <div className="p-[10px] dark:border-pink-800 dark:bg-pink-600 border-pink-400 border-[4px] bg-pink-200 rounded-lg h-[100%] float-right w-[25%]">
+                            Right column
+                        </div>
+                    </div>
+                </ExampleBlock>
+                <CodeBlock code={tripleColumnCode.props} />
+            </div>
             <GitHubRedirect page="Triple Column" href="" />
         </Layout>
     );
