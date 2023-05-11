@@ -60,36 +60,51 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         fullWidth,
         label,
         options,
+        defaultValue,
         ...props
     }) => {
         const selectRef = useRef<HTMLSelectElement | null>(null);
 
         return (
             <>
-                <select
-                    ref={selectRef}
-                    disabled={disabled}
-                    {...props}
-                    className={select({
-                        intent,
-                        size,
-                        disabled,
-                        error,
-                        className,
-                        fullWidth,
-                    })}
-                >
-                    {options.map((option: Option, i: number) => {
-                        return (
-                            <option key={i} value={option.value}>
-                                {option.label}
-                            </option>
-                        );
-                    })}
-                </select>
+                {label && (
+                    <div className="relative top-[-5px] ml-1">
+                        <label className="text-sm text-black dark:text-white">
+                            {label}
+                        </label>
+                    </div>
+                )}
+                <div>
+                    <select
+                        defaultValue={
+                            defaultValue ? defaultValue : options[0].value
+                        }
+                        ref={selectRef}
+                        disabled={disabled}
+                        {...props}
+                        className={select({
+                            intent,
+                            size,
+                            disabled,
+                            error,
+                            className,
+                            fullWidth,
+                        })}
+                    >
+                        {options.map((option: Option, i: number) => {
+                            return (
+                                <option key={i} value={option.value}>
+                                    {option.label}
+                                </option>
+                            );
+                        })}
+                    </select>
+                </div>
             </>
         );
     }
 );
 
 Select.displayName = "Select";
+
+export default Select;
