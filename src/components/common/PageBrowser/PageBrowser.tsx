@@ -14,10 +14,9 @@ const PageBrowser = ({ menuMap }: PageBrowserProps) => {
             <div className="block space-y-2 w-full">
                 {menuMap.map((entry: MenuMap) => (
                     <div className="flex" key={entry.href}>
-                        <AiFillCaretRight className="mt-[4px] mr-[4px]" />
                         <Link
                             href={entry.href}
-                            className="hover:underline dark:text-slate-400 cursor-pointer text-slate-700"
+                            className="hover:underline dark:text-slate-400 cursor-pointer text-slate-700 text-sm"
                         >
                             {entry.label}
                         </Link>
