@@ -45,6 +45,13 @@ export const componentMap: ComponentSectionMapType[] = [
                 href: "/stack",
                 disabled: true,
             },
+            {
+                id: 5,
+                title: "Triple Column",
+                value: "triple_column",
+                href: "/triple-column",
+                disabled: false,
+            },
         ],
     },
     {
@@ -62,7 +69,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Select",
                 value: "select",
                 href: "/select",
-                disabled: true,
+                disabled: false,
             },
             {
                 id: 4,
@@ -82,8 +89,8 @@ export const componentMap: ComponentSectionMapType[] = [
                 id: 6,
                 title: "Input Area",
                 value: "inputArea",
-                href: "/inputArea",
-                disabled: true,
+                href: "/input-area",
+                disabled: false,
             },
 
             {
@@ -139,8 +146,8 @@ export const componentMap: ComponentSectionMapType[] = [
                 id: 16,
                 title: "Code Block",
                 value: "codeBlock",
-                href: "/codeBlock",
-                disabled: true,
+                href: "/code-block",
+                disabled: false,
             },
         ],
     },

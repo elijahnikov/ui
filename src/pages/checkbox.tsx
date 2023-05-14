@@ -1,10 +1,11 @@
-import CodeBlock from "@/components/common/CodeBlock/CodeBlock";
+import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import Checkbox from "@/components/ui/Checkbox/Checkbox";
 import { checkboxCode, checkboxMenuMap } from "@/maps/component/checkbox";
 import React, { useState } from "react";
+import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 
 interface CheckboxPageProps {}
 
@@ -24,13 +25,13 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                     id="usage"
                 ></a>
                 <h4 className="mb-[30px]">Usage</h4>
-                <div className="mb-[30px] border-[1px] p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <Checkbox
                         checked={checked}
                         onChange={() => setChecked(!checked)}
                         text="Default checkbox"
                     />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={checkboxCode.default} />
             </div>
 
@@ -40,10 +41,10 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                     id="disabled"
                 ></a>
                 <h4 className="mb-[30px]">Disabled</h4>
-                <div className="mb-[30px] border-[1px] space-y-5 p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock className="space-y-5">
                     <Checkbox disabled text="Disabled" />
                     <Checkbox disabled checked={true} text="Disabled checked" />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={checkboxCode.disabled} />
             </div>
 
@@ -53,9 +54,9 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                     id="label"
                 ></a>
                 <h4 className="mb-[30px]">Label</h4>
-                <div className="mb-[30px] border-[1px] space-y-5 p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <Checkbox label="Label" text="Checkbox with label" />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={checkboxCode.label} />
             </div>
 
@@ -65,12 +66,15 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                     id="fullWidth"
                 ></a>
                 <h4 className="mb-[30px]">Full width</h4>
-                <div className="mb-[30px] border-[1px] space-y-5 p-5 dark:border-slate-700 rounded-xl">
+                <ExampleBlock>
                     <Checkbox fullWidth text="Checkbox with full width" />
-                </div>
+                </ExampleBlock>
                 <CodeBlock code={checkboxCode.fullWidth} />
             </div>
-            <GitHubRedirect page="Checkbox" href="" />
+            <GitHubRedirect
+                page="Checkbox"
+                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Checkbox/Checkbox.tsx"
+            />
         </Layout>
     );
 };
