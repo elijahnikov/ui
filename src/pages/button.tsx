@@ -3,21 +3,16 @@ import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 
 // Button
 import Button from "@/components/ui/Button/Button";
-import Input from "@/components/ui/Input/Input";
 
 // Maps
 import { buttonCode, buttonMenuMap } from "@/maps/component/button";
 
 // Icons
-import {
-    AiFillGithub,
-    AiFillSave,
-    AiOutlineCloudDownload,
-} from "react-icons/ai";
-import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
+import { AiFillSave, AiOutlineCloudDownload } from "react-icons/ai";
 
 interface buttonProps {}
 

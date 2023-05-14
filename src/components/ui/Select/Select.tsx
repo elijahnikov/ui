@@ -37,31 +37,33 @@ const Select = ({
 
     return (
         <>
-            {label && (
-                <div className="relative top-[-5px] ml-1">
-                    <label className="text-sm text-black dark:text-white">
-                        {label}
-                    </label>
-                </div>
-            )}{" "}
             <PopoverPrimitive.Root
                 open={open}
                 onOpenChange={() => setOpen(!open)}
             >
-                <PopoverPrimitive.Trigger
-                    className={`${
-                        open
-                            ? "border-primary-base"
-                            : "border-sky-light dark:border-slate-800"
-                    } absolute text-sm flex w-[200px] py-2 px-3 text-left border-[2px] rounded-lg`}
-                >
-                    <p className="w-[90%]">
-                        {value !== "" ? value : placeholder}
-                    </p>
-                    <BsChevronDown className="mt-1 fill-ink-light" />
+                <PopoverPrimitive.Trigger>
+                    {label && (
+                        <div className="text-left relative top-[-5px]">
+                            <p className="text-sm text-black dark:text-white">
+                                {label}
+                            </p>
+                        </div>
+                    )}
+                    <div
+                        className={`${
+                            open
+                                ? "border-primary-base"
+                                : "border-sky-light dark:border-slate-800"
+                        }  text-sm flex w-[200px] py-2 px-3 text-left border-[2px] rounded-lg`}
+                    >
+                        <p className="w-[90%]">
+                            {value !== "" ? value : placeholder}
+                        </p>
+                        <BsChevronDown className="mt-1 fill-ink-light" />
+                    </div>
                 </PopoverPrimitive.Trigger>
                 <PopoverPrimitive.Portal>
-                    <PopoverPrimitive.Content className="max-h-[400px] overflow-y-scroll border-sky-light dark:border-slate-800 space-y-1 mt-2 w-[200px] rounded-lg p-[5px] border-[2px]">
+                    <PopoverPrimitive.Content className="bg-white dark:bg-black max-h-[400px] overflow-y-scroll border-sky-light dark:border-slate-800 space-y-1 mt-2 w-[200px] rounded-lg p-[5px] border-[2px]">
                         {searchable && (
                             <Input
                                 className="w-[100%]"

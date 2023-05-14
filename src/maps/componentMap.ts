@@ -69,7 +69,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Select",
                 value: "select",
                 href: "/select",
-                disabled: true,
+                disabled: false,
             },
             {
                 id: 4,
