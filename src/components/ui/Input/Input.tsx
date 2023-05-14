@@ -1,3 +1,4 @@
+import clxsm from "@/lib/clsxm";
 import { cva, VariantProps } from "class-variance-authority";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { InputHTMLAttributes } from "react";
@@ -147,9 +148,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                             size,
                             disabled,
                             error,
-                            className: `${
-                                Prefix && "ml-[-5px] rounded-l-none"
-                            } ${Suffix && "mr-[-5px] rounded-r-none"}`,
+                            className: clxsm(
+                                className,
+                                Prefix && "ml-[-5px] rounded-l-none",
+                                Suffix && "mr-[-5px] rounded-r-none"
+                            ),
                             fullWidth,
                         })}
                     >
