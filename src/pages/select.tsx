@@ -116,7 +116,7 @@ const SelectPage = ({}: SelectPageProps) => {
                         <SelectItem value="Strawberry">Strawberry</SelectItem>
                     </Select>
                 </ExampleBlock>
-                <CodeBlock code={selectCode.searchable} />
+                <CodeBlock code={selectCode.disabled} />
             </div>
             <GitHubRedirect page="Select" href="" />
         </Layout>

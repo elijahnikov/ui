@@ -66,4 +66,21 @@ const [selectedFruit, setSelectedFruit] = useState<string>("");
     <SelectItem value="Pear">Pear</SelectItem>
     <SelectItem value="Strawberry">Strawberry</SelectItem>
 </Select>`,
+
+    disabled: `import { Select, SelectItem } from "@/components/ui/Select/Select";
+
+const [selectedFruit, setSelectedFruit] = useState<string>("");
+
+<Select
+    disabled
+    value={selectedFruit}
+    setValue={setSelectedFruit}
+    placeholder="Fruits"
+>
+    <SelectItem value="Apple">Apple</SelectItem>
+    <SelectItem value="Banana">Banana</SelectItem>
+    <SelectItem value="Orange">Orange</SelectItem>
+    <SelectItem value="Pear">Pear</SelectItem>
+    <SelectItem value="Strawberry">Strawberry</SelectItem>
+</Select>`,
 };
