@@ -17,6 +17,7 @@ interface SelectPageProps {}
 
 const SelectPage = ({}: SelectPageProps) => {
     const [selectedFruit, setSelectedFruit] = useState<string>("");
+    const [searchableFruit, setSearchableFruit] = useState<string>("");
     const [yesNo, setYesNo] = useState<string>("");
 
     return (
@@ -68,6 +69,32 @@ const SelectPage = ({}: SelectPageProps) => {
                     </Select>
                 </ExampleBlock>
                 <CodeBlock code={selectCode.label} />
+            </div>
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="searchable"
+                ></a>
+                <h4>Searchable</h4>
+                <p className="mb-[30px]">
+                    For select lists that contain a lot of options, the
+                    searchable prop can be passed to add a search field.
+                </p>
+                <ExampleBlock className="space-x-5">
+                    <Select
+                        searchable
+                        value={searchableFruit}
+                        setValue={setSearchableFruit}
+                        placeholder="Fruits"
+                    >
+                        <SelectItem value="Apple">Apple</SelectItem>
+                        <SelectItem value="Banana">Banana</SelectItem>
+                        <SelectItem value="Orange">Orange</SelectItem>
+                        <SelectItem value="Pear">Pear</SelectItem>
+                        <SelectItem value="Strawberry">Strawberry</SelectItem>
+                    </Select>
+                </ExampleBlock>
+                <CodeBlock code={selectCode.searchable} />
             </div>
             <GitHubRedirect page="Select" href="" />
         </Layout>
