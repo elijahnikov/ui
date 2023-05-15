@@ -43,7 +43,7 @@ const List = React.forwardRef<HTMLDivElement, TabsListProps>(
             <div
                 className={clxsm(
                     className,
-                    "flex bg-sky-lighter p-1 h-[40px] rounded-md"
+                    "flex bg-sky-lighter dark:bg-slate-900 p-1 h-[40px] rounded-md"
                 )}
             >
                 {React.Children.map(children, (child) => {
@@ -68,8 +68,8 @@ const Trigger = React.forwardRef<HTMLDivElement, TabsTriggerContentProps>(
                 className={clxsm(
                     className,
                     `${
-                        selectedTab === value && "bg-white"
-                    } table rounded-md w-[50%] cursor-pointer`
+                        selectedTab === value && "bg-white dark:bg-black"
+                    } table rounded-md transition ease-in-out w-[50%] border-primary-base cursor-pointer`
                 )}
             >
                 <div className="table-cell text-center align-middle">
