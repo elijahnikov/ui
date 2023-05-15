@@ -98,7 +98,7 @@ const Select = ({
     );
 };
 
-const SelectItem = ({
+const Item = ({
     value,
     children,
     selectedValue,
@@ -124,4 +124,6 @@ const SelectItem = ({
     );
 };
 
-export { Select, SelectItem };
+Select.Item = Item;
+
+export { Select, Item };
