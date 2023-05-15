@@ -41,7 +41,7 @@ const Select = ({
                 open={open}
                 onOpenChange={() => setOpen(!open)}
             >
-                <PopoverPrimitive.Trigger>
+                <PopoverPrimitive.Trigger disabled={disabled}>
                     {label && (
                         <div className="text-left relative top-[-5px]">
                             <p className="text-sm text-black dark:text-white">
@@ -51,6 +51,9 @@ const Select = ({
                     )}
                     <div
                         className={`${
+                            disabled &&
+                            "border-sky-lighter bg-sky-lightest dark:border-ink-dark dark:bg-ink-darker"
+                        } ${
                             open
                                 ? "border-primary-base"
                                 : "border-sky-light dark:border-slate-800"

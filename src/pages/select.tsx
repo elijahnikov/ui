@@ -96,6 +96,28 @@ const SelectPage = ({}: SelectPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={selectCode.searchable} />
             </div>
+            <div className="mt-[50px]">
+                <a
+                    className="relative h-[20px] invisible top-[-80px]"
+                    id="disabled"
+                ></a>
+                <h4 className="mb-[30px]">Disabled</h4>
+                <ExampleBlock className="space-x-5">
+                    <Select
+                        disabled
+                        value={searchableFruit}
+                        setValue={setSearchableFruit}
+                        placeholder="Fruits"
+                    >
+                        <SelectItem value="Apple">Apple</SelectItem>
+                        <SelectItem value="Banana">Banana</SelectItem>
+                        <SelectItem value="Orange">Orange</SelectItem>
+                        <SelectItem value="Pear">Pear</SelectItem>
+                        <SelectItem value="Strawberry">Strawberry</SelectItem>
+                    </Select>
+                </ExampleBlock>
+                <CodeBlock code={selectCode.searchable} />
+            </div>
             <GitHubRedirect page="Select" href="" />
         </Layout>
     );
