@@ -23,6 +23,7 @@ const TripleColumnPage = ({}: TripleColumnPageProps) => {
                 <PageHeader
                     title="Triple Column"
                     description="A layout component that is used to add a triple column layout as seen in most modern websites such as dashboards."
+                    githubLink="/"
                 />
             </div>
 

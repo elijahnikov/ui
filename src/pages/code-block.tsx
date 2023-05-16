@@ -16,6 +16,7 @@ const CodeBlockPage = ({}: CodeBlockPageProps) => {
                 <PageHeader
                     title="Code Block"
                     description="Display code examples to your users."
+                    githubLink="/"
                 />
             </div>
             <div>

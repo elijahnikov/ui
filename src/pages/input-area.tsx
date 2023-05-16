@@ -17,6 +17,7 @@ const InputAreaPage = ({}: InputAreaPageProps) => {
                 <PageHeader
                     title="Input Area"
                     description="A input component used to retrieve user input in the form of a text field"
+                    githubLink="/"
                 />
             </div>
             <div>

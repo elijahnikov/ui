@@ -19,6 +19,7 @@ const TabsPage = ({}: TabsPageProps) => {
                 <PageHeader
                     title="Tabs"
                     description="Sections of content that are displayed one at a time, depending on which tab is selected."
+                    githubLink="/"
                 />
             </div>
             <div>

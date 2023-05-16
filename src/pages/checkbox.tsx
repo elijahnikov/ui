@@ -18,6 +18,7 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                 <PageHeader
                     title="Checkbox"
                     description="A control that toggles between two options, checked or unchecked."
+                    githubLink="/"
                 />
             </div>
             <div>

@@ -12,20 +12,19 @@ const PageHeader = ({ title, description, githubLink }: PageHeaderProps) => {
     return (
         <>
             <div className="flex">
-                <h1 className="w-[80%]">{title}</h1>
-                <div className="ml-4 relative top-3">
-                    {githubLink && (
-                        <Badge variant={"solid"} size={"sm"}>
-                            <BadgeIcon icon={BsGithub} />
-                            <BadgeLabel>{title}</BadgeLabel>
-                        </Badge>
-                    )}
-                </div>
+                <h1>{title}</h1>
             </div>
             <p className="text-lg dark:text-slate-400 text-slate-500">
                 {description}
             </p>
-
+            <div className="mt-[10px] mb-[10px]">
+                {githubLink && (
+                    <Badge variant={"solid"} size={"sm"}>
+                        <BadgeIcon icon={BsGithub} />
+                        <BadgeLabel>Source</BadgeLabel>
+                    </Badge>
+                )}
+            </div>
             <div className="mt-[15px] dark:border-slate-700 border-b-[1px]" />
         </>
     );
