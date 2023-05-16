@@ -2,6 +2,7 @@ import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import InputArea from "@/components/ui/InpuArea/InputArea";
 import { inputAreaCode, inputAreaMenuMap } from "@/maps/component/inputArea";
@@ -80,10 +81,7 @@ const InputAreaPage = ({}: InputAreaPageProps) => {
                 <CodeBlock code={inputAreaCode.error} />
             </div>
 
-            <GitHubRedirect
-                page="Input Area"
-                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Button/Button.tsx"
-            />
+            <PageStepper currentPage="inputArea" />
         </Layout>
     );
 };

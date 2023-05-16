@@ -12,6 +12,7 @@ import { Select } from "@/components/ui/Select/Select";
 // Maps
 import { selectCode, selectMenuMap } from "@/maps/component/select";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 
 interface SelectPageProps {}
 
@@ -118,7 +119,7 @@ const SelectPage = ({}: SelectPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={selectCode.disabled} />
             </div>
-            <GitHubRedirect page="Select" href="" />
+            <PageStepper currentPage="select" />
         </Layout>
     );
 };

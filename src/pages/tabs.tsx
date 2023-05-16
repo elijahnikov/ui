@@ -2,6 +2,7 @@ import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 import Button from "@/components/ui/Button/Button";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import Input from "@/components/ui/Input/Input";
@@ -81,7 +82,7 @@ const TabsPage = ({}: TabsPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={tabsCode.usage} />
             </div>
-            <GitHubRedirect page="Tabs" href="" />
+            <PageStepper currentPage="tabs" />
         </Layout>
     );
 };

@@ -18,17 +18,17 @@ export const componentMap: ComponentSectionMapType[] = [
         title: "Layout",
         components: [
             {
-                id: 1,
-                title: "Card",
-                value: "card",
-                href: "/card",
-                disabled: true,
-            },
-            {
                 id: 2,
                 title: "Accordion",
                 value: "accordion",
                 href: "/accordion",
+                disabled: true,
+            },
+            {
+                id: 1,
+                title: "Card",
+                value: "card",
+                href: "/card",
                 disabled: true,
             },
             {

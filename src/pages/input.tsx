@@ -13,6 +13,7 @@ import {
 } from "react-icons/ai";
 import { Bs0Circle } from "react-icons/bs";
 import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 
 interface InputPageProps {}
 
@@ -157,10 +158,7 @@ const InputPage = ({}: InputPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={inputCode.error} />
             </div>
-            <GitHubRedirect
-                page="Input"
-                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Input/Input.tsx"
-            />
+            <PageStepper currentPage="input" />
         </Layout>
     );
 };

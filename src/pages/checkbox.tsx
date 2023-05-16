@@ -6,6 +6,7 @@ import Checkbox from "@/components/ui/Checkbox/Checkbox";
 import { checkboxCode, checkboxMenuMap } from "@/maps/component/checkbox";
 import React, { useState } from "react";
 import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 
 interface CheckboxPageProps {}
 
@@ -71,10 +72,7 @@ const CheckboxPage = ({}: CheckboxPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={checkboxCode.fullWidth} />
             </div>
-            <GitHubRedirect
-                page="Checkbox"
-                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Checkbox/Checkbox.tsx"
-            />
+            <PageStepper currentPage="checkbox" />
         </Layout>
     );
 };

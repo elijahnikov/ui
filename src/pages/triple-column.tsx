@@ -2,6 +2,7 @@ import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import TripleColumn from "@/components/ui/TripleColumn/TripleColumn";
 import {
@@ -83,7 +84,7 @@ const TripleColumnPage = ({}: TripleColumnPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={tripleColumnCode.props} />
             </div>
-            <GitHubRedirect page="Triple Column" href="" />
+            <PageStepper currentPage="triple_column" />
         </Layout>
     );
 };
