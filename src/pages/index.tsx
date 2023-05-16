@@ -9,7 +9,7 @@ import { BsGithub, BsPlus } from "react-icons/bs";
 export default function Home() {
     return (
         <Layout>
-            <div>
+            <div className="mt-[20px]">
                 <Tooltip>
                     <Tooltip.Trigger>
                         <Button>Hello</Button>
