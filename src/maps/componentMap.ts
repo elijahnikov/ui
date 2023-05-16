@@ -149,6 +149,13 @@ export const componentMap: ComponentSectionMapType[] = [
                 href: "/code-block",
                 disabled: false,
             },
+            {
+                id: 17,
+                title: "Badge",
+                value: "badge",
+                href: "/badge",
+                disabled: false,
+            },
         ],
     },
 ];
