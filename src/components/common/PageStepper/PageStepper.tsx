@@ -45,7 +45,7 @@ const PageStepper = ({ currentPage }: PageStepperProps) => {
                                 onClick={() => {}}
                                 leftIcon={BiChevronLeft}
                                 intent={"outline"}
-                                className="rounded-md"
+                                className="rounded-md min-w-[160px]"
                             >
                                 {previousPage.title}
                             </Button>
@@ -59,7 +59,7 @@ const PageStepper = ({ currentPage }: PageStepperProps) => {
                                 onClick={() => {}}
                                 rightIcon={BiChevronRight}
                                 intent={"outline"}
-                                className="rounded-md"
+                                className="rounded-md min-w-[160px]"
                             >
                                 {nextPage.title}
                             </Button>
