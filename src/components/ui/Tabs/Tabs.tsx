@@ -41,6 +41,8 @@ const List = React.forwardRef<HTMLDivElement, TabsListProps>(
     ({ children, className, selectedTab, setSelectedTab, ...props }, ref) => {
         return (
             <div
+                {...props}
+                ref={ref}
                 className={clxsm(
                     className,
                     "flex bg-sky-lighter dark:bg-slate-900 p-1 h-[40px] rounded-md"
@@ -64,6 +66,8 @@ const Trigger = React.forwardRef<HTMLDivElement, TabsTriggerContentProps>(
     ) => {
         return (
             <div
+                ref={ref}
+                {...props}
                 onClick={() => setSelectedTab && setSelectedTab(value)}
                 className={clxsm(
                     className,
@@ -85,11 +89,11 @@ const Trigger = React.forwardRef<HTMLDivElement, TabsTriggerContentProps>(
 const Content = React.forwardRef<HTMLDivElement, TabsTriggerContentProps>(
     ({ children, selectedTab, value, className, ...props }, ref) => {
         return (
-            <>
+            <div {...props} ref={ref} className={clxsm(className)}>
                 {selectedTab === value && (
                     <div className={clxsm(className, "")}>{children}</div>
                 )}
-            </>
+            </div>
         );
     }
 );

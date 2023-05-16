@@ -97,6 +97,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ) => {
         return (
             <button
+                ref={ref}
                 {...props}
                 className={button({
                     intent,
