@@ -5,9 +5,10 @@ interface ExampleBlockProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const ExampleBlock = React.forwardRef<HTMLDivElement, ExampleBlockProps>(
-    ({ children, className, ...props }) => {
+    ({ children, className, ...props }, ref) => {
         return (
             <div
+                ref={ref}
                 className={`${className} border-[1px] dark:border-slate-800 mt-[30px] mb-[30px] p-5 rounded-lg`}
                 {...props}
             >
