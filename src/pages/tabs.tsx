@@ -6,14 +6,14 @@ import Button from "@/components/ui/Button/Button";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import Input from "@/components/ui/Input/Input";
 import Tabs from "@/components/ui/Tabs/Tabs";
-import { tabsCode } from "@/maps/component/tabs";
+import { tabsCode, tabsMenuMap } from "@/maps/component/tabs";
 import React from "react";
 
 interface TabsPageProps {}
 
 const TabsPage = ({}: TabsPageProps) => {
     return (
-        <Layout title="Tabs - Supercrumble UI" menuMap={[]}>
+        <Layout title="Tabs - Supercrumble UI" menuMap={tabsMenuMap}>
             <div className="mb-[40px]">
                 <PageHeader
                     title="Tabs"

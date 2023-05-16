@@ -68,8 +68,9 @@ const Trigger = React.forwardRef<HTMLDivElement, TabsTriggerContentProps>(
                 className={clxsm(
                     className,
                     `${
-                        selectedTab === value &&
-                        "bg-white shadow-sm dark:bg-black"
+                        selectedTab === value
+                            ? "bg-white shadow-sm dark:bg-black"
+                            : "text-ink-light dark:text-sky-dark"
                     } table rounded-md transition ease-in-out w-[50%] border-primary-base cursor-pointer`
                 )}
             >
