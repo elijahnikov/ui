@@ -1,5 +1,10 @@
+// Components
 import { Badge, BadgeIcon, BadgeLabel } from "@/components/ui/Badge/Badge";
+
+// React
 import React from "react";
+
+// ReactIcons
 import { BsGithub } from "react-icons/bs";
 
 interface PageHeaderProps {

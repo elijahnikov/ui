@@ -1,10 +1,14 @@
+// Types
 import {
     componentMap,
     ComponentSectionMapType,
     ComponentType,
 } from "@/maps/componentMap";
+
+// Next
 import Link from "next/link";
-import Image from "next/image";
+
+// React
 import { useEffect, useState } from "react";
 
 const ComponentsBar = () => {

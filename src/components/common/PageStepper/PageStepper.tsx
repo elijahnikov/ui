@@ -1,7 +1,16 @@
+// Components
 import Button from "@/components/ui/Button/Button";
+
+// Types
 import { componentMap } from "@/maps/componentMap";
+
+// Next
 import Link from "next/link";
+
+// React
 import React from "react";
+
+// ReactIcons
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 interface PageStepperProps {

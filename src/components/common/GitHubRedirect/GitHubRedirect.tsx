@@ -1,4 +1,7 @@
+// React
 import React from "react";
+
+// ReactIcons
 import { AiFillGithub } from "react-icons/ai";
 
 interface GitHubRedirectProps {

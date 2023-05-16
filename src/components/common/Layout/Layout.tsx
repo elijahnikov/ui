@@ -1,10 +1,17 @@
+// Components
 import ContentBar from "../ContentBar/ContentBar";
 import ComponentsBar from "../ComponentsBar/ComponentsBar";
 import NavBar from "../NavBar/NavBar";
-import Head from "next/head";
 import Button from "@/components/ui/Button/Button";
-import { AiOutlineMenu } from "react-icons/ai";
 import PageBrowser from "../PageBrowser/PageBrowser";
+
+// Next
+import Head from "next/head";
+
+// ReactIcons
+import { AiOutlineMenu } from "react-icons/ai";
+
+// Types
 import { MenuMap } from "@/maps/component/types";
 
 interface LayoutProps {
