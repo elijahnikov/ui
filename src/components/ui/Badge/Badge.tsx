@@ -13,7 +13,7 @@ interface BadgeInnerProps extends HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 }
 
-interface BadgeIconProps {
+interface BadgeIconProps extends Omit<BadgeProps, "children"> {
     icon: IconType;
 }
 
@@ -56,10 +56,15 @@ const BadgeLabel = React.forwardRef<HTMLDivElement, BadgeInnerProps>(
     }
 );
 
-const BadgeIcon = ({ icon }: BadgeIconProps) => {
+const BadgeIcon = ({ icon, size, className }: BadgeIconProps) => {
     const Icon = icon;
     return (
-        <div className="mt-[3px] mr-1 ml-1">
+        <div
+            className={clxsm(
+                className,
+                size === "base" ? "mt-[3px] mr-1 ml-1" : "mt-[2px] mr-1 ml-1"
+            )}
+        >
             <Icon />
         </div>
     );

@@ -26,6 +26,7 @@ const ButtonPage = ({}: buttonProps) => {
                     description={`A control that triggers an action. Button labels should
 					express what action will occur when the user interacts with
 					it.`}
+                    githubLink="/"
                 />
             </div>
             <div>
