@@ -9,7 +9,7 @@ interface PageStepperProps {
 }
 
 const PageStepper = ({ currentPage }: PageStepperProps) => {
-    const type = componentMap[0].components.find(
+    let type = componentMap[0].components.find(
         (component) => component.value === currentPage
     )
         ? componentMap[0]
@@ -18,8 +18,21 @@ const PageStepper = ({ currentPage }: PageStepperProps) => {
     const pageIndex = type.components.findIndex(
         (component) => component.value === currentPage
     );
-    const previousPage = type.components[pageIndex - 1];
-    const nextPage = type.components[pageIndex + 1];
+
+    let previousPage;
+    let nextPage;
+
+    if (pageIndex === type.components.length - 1) {
+        previousPage = type.components[pageIndex - 1];
+        nextPage = componentMap[1].components[0];
+    } else if (pageIndex === 0) {
+        previousPage =
+            componentMap[0].components[componentMap[0].components.length - 1];
+        nextPage = type.components[pageIndex + 1];
+    } else {
+        previousPage = type.components[pageIndex - 1];
+        nextPage = type.components[pageIndex + 1];
+    }
 
     return (
         <>
