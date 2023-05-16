@@ -3,7 +3,9 @@ import { VariantProps, cva } from "class-variance-authority";
 import React, { HTMLAttributes } from "react";
 import { IconBaseProps, IconType } from "react-icons";
 
-interface BadgeProps extends VariantProps<typeof badge> {
+interface BadgeProps
+    extends HTMLAttributes<HTMLDivElement>,
+        VariantProps<typeof badge> {
     children: React.ReactNode;
 }
 
@@ -34,11 +36,17 @@ const badge = cva("flex rounded-xl w-max", {
     },
 });
 
-const Badge = ({ children, variant, size }: BadgeProps) => {
-    return <div className={badge({ variant, size })}>{children}</div>;
-};
+const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
+    ({ variant, size, children, className, ...props }, ref) => {
+        return (
+            <div ref={ref} className={badge({ variant, size, className })}>
+                {children}
+            </div>
+        );
+    }
+);
 
-const Label = React.forwardRef<HTMLDivElement, BadgeInnerProps>(
+const BadgeLabel = React.forwardRef<HTMLDivElement, BadgeInnerProps>(
     ({ children, className, ...props }, ref) => {
         return (
             <div {...props} className={clxsm(className)}>
@@ -48,7 +56,7 @@ const Label = React.forwardRef<HTMLDivElement, BadgeInnerProps>(
     }
 );
 
-const Icon = ({ icon }: BadgeIconProps) => {
+const BadgeIcon = ({ icon }: BadgeIconProps) => {
     const Icon = icon;
     return (
         <div className="mt-[3px] mr-1 ml-1">
@@ -57,10 +65,8 @@ const Icon = ({ icon }: BadgeIconProps) => {
     );
 };
 
-Label.displayName = "BadgeLabel";
-Icon.displayName = "BadgeIcon";
+Badge.displayName = "Badge";
+BadgeLabel.displayName = "BadgeLabel";
+BadgeIcon.displayName = "BadgeIcon";
 
-Badge.Label = Label;
-Badge.Icon = Icon;
-
-export default Badge;
+export { Badge, BadgeLabel, BadgeIcon };
