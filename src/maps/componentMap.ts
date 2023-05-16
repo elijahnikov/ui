@@ -112,7 +112,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Tabs",
                 value: "tabs",
                 href: "/tabs",
-                disabled: true,
+                disabled: false,
             },
             {
                 id: 12,

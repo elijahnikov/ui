@@ -13,13 +13,13 @@ const CodeBlock = ({ code, copyable = true }: CodeBlockProps) => {
     };
 
     return (
-        <div className="relative inline-block text-sm w-full flex-col dark:border-slate-600 dark:bg-slate-800 bg-sky-lightest dark:text-white rounded-md p-[25px] border-[1px] border-gray-300">
+        <div className="overflow-y-scroll max-h-[400px] relative inline-block text-sm w-full flex-col dark:border-slate-600 dark:bg-slate-800 bg-sky-lightest dark:text-white rounded-md p-[25px] border-[1px] border-gray-300">
             <pre className="w-[95%] float-left">
                 <code className="whitespace-pre-wrap language-javascript">
                     {code}
                 </code>
             </pre>
-            <div className="float-right w-[5%] absolute right-5 bottom-5">
+            <div className="float-right w-[5%] absolute right-5 top-5">
                 {copyable && (
                     <Button
                         onClick={() => copyToClipboard()}
