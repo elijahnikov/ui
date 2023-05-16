@@ -1,23 +1,19 @@
 import Layout from "@/components/common/Layout/Layout";
+import { Badge, BadgeIcon, BadgeLabel } from "@/components/ui/Badge/Badge";
 import Tabs from "@/components/ui/Tabs/Tabs";
+import { BiFile, BiGitBranch } from "react-icons/bi";
+import { BsGithub } from "react-icons/bs";
 
 export default function Home() {
     return (
         <Layout>
-            <Tabs defaultTab="tab1">
-                <Tabs.List>
-                    <Tabs.Trigger value="tab1">
-                        <p>Tab1</p>
-                    </Tabs.Trigger>
-                    <Tabs.Trigger value="tab2">Tab2</Tabs.Trigger>
-                    <Tabs.Trigger value="tab3">Tab3</Tabs.Trigger>
-                </Tabs.List>
-                <Tabs.Content value="tab1">
-                    <h1>hello</h1>
-                </Tabs.Content>
-                <Tabs.Content value="tab2">Content2</Tabs.Content>
-                <Tabs.Content value="tab3">Content3</Tabs.Content>
-            </Tabs>
+            <div className="space-y-5">
+                <Badge>
+                    <BadgeIcon icon={BiGitBranch} />
+                    <BadgeLabel>component/badge</BadgeLabel>
+                    <BadgeIcon icon={BiGitBranch} />
+                </Badge>
+            </div>
         </Layout>
     );
 }
