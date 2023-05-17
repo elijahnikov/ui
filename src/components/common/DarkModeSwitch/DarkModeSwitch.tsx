@@ -1,8 +1,14 @@
+// Components
 import Button from "@/components/ui/Button/Button";
+
+// Next
 import { useTheme } from "next-themes";
+
+// React
 import { useEffect, useState } from "react";
+
+// ReactIcons
 import { BsFillSunFill, BsMoon, BsMoonFill } from "react-icons/bs";
-import { MdDarkMode } from "react-icons/md";
 
 interface DarkModeSwitchProps {}
 

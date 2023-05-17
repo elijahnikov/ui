@@ -1,9 +1,11 @@
 // Next
-import Button from "@/components/ui/Button/Button";
 import Image from "next/image";
 import Link from "next/link";
+
+// ReactIcons
 import { AiFillGithub } from "react-icons/ai";
-import { BsGlobe } from "react-icons/bs";
+
+// Components
 import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 
 const NavBar = () => {

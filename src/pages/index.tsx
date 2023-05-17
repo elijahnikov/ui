@@ -1,28 +1,18 @@
 import Layout from "@/components/common/Layout/Layout";
-import InputArea from "@/components/ui/InpuArea/InputArea";
-import { Select, SelectItem } from "@/components/ui/Select/Select";
-
-import TripleColumn from "@/components/ui/TripleColumn/TripleColumn";
-import { useState } from "react";
+import { Badge, BadgeIcon, BadgeLabel } from "@/components/ui/Badge/Badge";
+import Button from "@/components/ui/Button/Button";
+import Spinner from "@/components/ui/Spinner/Spinner";
+import Tabs from "@/components/ui/Tabs/Tabs";
+import Tooltip from "@/components/ui/Tooltip/Tooltip";
+import { BiFile, BiGitBranch } from "react-icons/bi";
+import { BsGithub, BsPlus } from "react-icons/bs";
 
 export default function Home() {
-    const [clearableText, setClearableText] = useState<string>("");
-    const [value, setValue] = useState("");
     return (
         <Layout>
-            <Select
-                searchable
-                value={value}
-                setValue={setValue}
-                label="Select a fruit"
-                placeholder="Fruits"
-            >
-                <SelectItem value="Apple">Apple</SelectItem>
-                <SelectItem value="Banana">Banana</SelectItem>
-                <SelectItem value="Orange">Orange</SelectItem>
-                <SelectItem value="Pear">Pear</SelectItem>
-                <SelectItem value="Strawberry">Strawberry</SelectItem>
-            </Select>
+            <div className="mt-[20px]">
+                <Spinner />
+            </div>
         </Layout>
     );
 }

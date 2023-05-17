@@ -1,7 +1,11 @@
+// Types
 import { MenuMap } from "@/maps/component/types";
+
+// Next
 import Link from "next/link";
+
+// React
 import React from "react";
-import { AiFillCaretRight } from "react-icons/ai";
 
 interface PageBrowserProps {
     menuMap: MenuMap[];

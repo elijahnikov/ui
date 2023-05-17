@@ -13,6 +13,7 @@ import { buttonCode, buttonMenuMap } from "@/maps/component/button";
 
 // Icons
 import { AiFillSave, AiOutlineCloudDownload } from "react-icons/ai";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 
 interface buttonProps {}
 
@@ -25,6 +26,7 @@ const ButtonPage = ({}: buttonProps) => {
                     description={`A control that triggers an action. Button labels should
 					express what action will occur when the user interacts with
 					it.`}
+                    githubLink="/"
                 />
             </div>
             <div>
@@ -133,10 +135,7 @@ const ButtonPage = ({}: buttonProps) => {
                 </ExampleBlock>
                 <CodeBlock code={buttonCode.buttonWithIcon} />
             </div>
-            <GitHubRedirect
-                page="Button"
-                href="https://github.com/elijahnikov/ui/blob/main/src/components/ui/Button/Button.tsx"
-            />
+            <PageStepper currentPage="button" />
         </Layout>
     );
 };

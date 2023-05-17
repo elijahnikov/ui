@@ -5,7 +5,7 @@ import { InputHTMLAttributes } from "react";
 import { IconType } from "react-icons";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
-const input = cva(["py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"], {
+const input = cva(["py-2 px-3", "rounded-lg", "border-[1px]", "outline-none"], {
     variants: {
         intent: {
             default: [
@@ -108,8 +108,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <>
                 {/* if label is passed */}
                 {label && (
-                    <div className="relative top-[-5px] ml-1">
-                        <label className="text-sm text-black dark:text-white">
+                    <div className="relative top-[-2px] ml-1">
+                        <label className="text-sm font-semibold text-black dark:text-white">
                             {label}
                         </label>
                     </div>

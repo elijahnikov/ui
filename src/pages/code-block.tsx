@@ -2,6 +2,7 @@ import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import GitHubRedirect from "@/components/common/GitHubRedirect/GitHubRedirect";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import { codeBlockCode, codeBlockMenuMap } from "@/maps/component/codeBlock";
 import React from "react";
@@ -15,6 +16,7 @@ const CodeBlockPage = ({}: CodeBlockPageProps) => {
                 <PageHeader
                     title="Code Block"
                     description="Display code examples to your users."
+                    githubLink="/"
                 />
             </div>
             <div>
@@ -40,7 +42,7 @@ const CodeBlockPage = ({}: CodeBlockPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={codeBlockCode.copyable} />
             </div>
-            <GitHubRedirect page="Code Block" href="" />
+            <PageStepper currentPage="codeBlock" />
         </Layout>
     );
 };
