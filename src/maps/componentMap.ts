@@ -161,4 +161,12 @@ export const componentMap: ComponentType[] = [
         disabled: false,
         type: "component",
     },
+    {
+        id: 18,
+        title: "Toast",
+        value: "toast",
+        href: "/toast",
+        disabled: false,
+        type: "component",
+    },
 ];
