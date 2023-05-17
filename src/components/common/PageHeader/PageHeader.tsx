@@ -23,11 +23,13 @@ const PageHeader = ({ title, description, githubLink }: PageHeaderProps) => {
                 {description}
             </p>
             {githubLink && (
-                <a href={githubLink} className="mt-[10px] mb-[10px]">
-                    <Badge variant={"solid"} size={"sm"}>
-                        <BadgeIcon icon={BsGithub} />
-                        <BadgeLabel>Source</BadgeLabel>
-                    </Badge>
+                <a href={githubLink}>
+                    <div className="mt-[10px] mb-[10px]">
+                        <Badge variant={"solid"} size={"sm"}>
+                            <BadgeIcon icon={BsGithub} />
+                            <BadgeLabel>Source</BadgeLabel>
+                        </Badge>
+                    </div>
                 </a>
             )}
             <div className="mt-[15px] dark:border-slate-700 border-b-[1px]" />
