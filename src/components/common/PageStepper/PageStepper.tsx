@@ -8,7 +8,7 @@ import { componentMap } from "@/maps/componentMap";
 import Link from "next/link";
 
 // React
-import React from "react";
+import React, { ComponentType } from "react";
 
 // ReactIcons
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -18,29 +18,36 @@ interface PageStepperProps {
 }
 
 const PageStepper = ({ currentPage }: PageStepperProps) => {
-    let type = componentMap[0].components.find(
-        (component) => component.value === currentPage
-    )
-        ? componentMap[0]
-        : componentMap[1];
+    let layout = componentMap
+        .filter(
+            (component) => component.type === "layout" && !component.disabled
+        )
+        .sort((a, b) => a.title.localeCompare(b.title));
+    let components = componentMap
+        .filter(
+            (component) => component.type === "component" && !component.disabled
+        )
+        .sort((a, b) => a.title.localeCompare(b.title));
+    let sortedComponentMap = [...layout, ...components];
 
-    const pageIndex = type.components.findIndex(
+    const pageIndex = sortedComponentMap.findIndex(
         (component) => component.value === currentPage
     );
+
+    console.log({ pageIndex });
 
     let previousPage;
     let nextPage;
 
-    if (pageIndex === type.components.length - 1) {
-        previousPage = type.components[pageIndex - 1];
-        nextPage = componentMap[1].components[0];
+    if (pageIndex === sortedComponentMap.length - 1) {
+        previousPage = sortedComponentMap[pageIndex - 1];
+        nextPage = sortedComponentMap[0];
     } else if (pageIndex === 0) {
-        previousPage =
-            componentMap[0].components[componentMap[0].components.length - 1];
-        nextPage = type.components[pageIndex + 1];
+        previousPage = sortedComponentMap[sortedComponentMap.length - 1];
+        nextPage = sortedComponentMap[pageIndex + 1];
     } else {
-        previousPage = type.components[pageIndex - 1];
-        nextPage = type.components[pageIndex + 1];
+        previousPage = sortedComponentMap[pageIndex - 1];
+        nextPage = sortedComponentMap[pageIndex + 1];
     }
 
     return (
