@@ -9,12 +9,7 @@ const Spinner = React.forwardRef<HTMLSpanElement, SpinnerProps>(
     ({ children, className, size, ...props }, ref) => {
         let sizer = size === "base" ? 6 : size === "sm" ? 4 : 8;
         return (
-            <span
-                className={clxsm(
-                    className,
-                    `absolute block h-${sizer} w-${sizer}`
-                )}
-            >
+            <span className={clxsm(className, `block h-${sizer} w-${sizer}`)}>
                 <svg
                     className="animate-spin"
                     viewBox="0 0 20 20"

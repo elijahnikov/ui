@@ -126,7 +126,7 @@ export const componentMap: ComponentType[] = [
         title: "Spinner",
         value: "spinner",
         href: "/spinner",
-        disabled: true,
+        disabled: false,
         type: "component",
     },
     {
