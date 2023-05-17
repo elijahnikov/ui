@@ -34,8 +34,6 @@ const PageStepper = ({ currentPage }: PageStepperProps) => {
         (component) => component.value === currentPage
     );
 
-    console.log({ pageIndex });
-
     let previousPage;
     let nextPage;
 
