@@ -98,7 +98,7 @@ export const componentMap: ComponentSectionMapType[] = [
                 title: "Tooltip",
                 value: "tooltip",
                 href: "/tooltip",
-                disabled: true,
+                disabled: false,
             },
             {
                 id: 10,
