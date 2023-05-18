@@ -21,8 +21,8 @@ interface ProgressProps {
 
 const Progress = ({ value }: ProgressProps) => {
     return (
-        <div className="w-full bg-sky-base rounded-full">
-            <div className="bg-black w-[20%] h-[20px] rounded-full" />
+        <div className="w-full bg-sky-base dark:bg-ink-base rounded-full">
+            <div className="dark:bg-sky-base bg-black w-[20%] h-[20px] rounded-full" />
         </div>
     );
 };
