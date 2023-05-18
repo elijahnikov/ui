@@ -8,6 +8,7 @@ import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import Progress from "@/components/ui/Progress/Progress";
 import { progressCode, progressMenuMap } from "@/maps/component/progress";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 
 interface ProgressPageProps {}
 
@@ -36,6 +37,7 @@ const ProgressPage = ({}: ProgressPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={progressCode.usage} />
             </div>
+            <PageStepper currentPage="progress" />
         </Layout>
     );
 };
