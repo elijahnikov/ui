@@ -134,7 +134,7 @@ export const componentMap: ComponentType[] = [
         title: "Progress",
         value: "progress",
         href: "/progress",
-        disabled: true,
+        disabled: false,
         type: "component",
     },
     {
