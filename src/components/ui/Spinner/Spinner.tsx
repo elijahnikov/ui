@@ -11,7 +11,7 @@ const Spinner = React.forwardRef<HTMLSpanElement, SpinnerProps>(
         return (
             <span className={clxsm(className, `block h-${sizer} w-${sizer}`)}>
                 <svg
-                    className="animate-spin"
+                    className={`animate-spin block h-${sizer} w-${sizer}`}
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                 >
