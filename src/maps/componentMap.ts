@@ -169,4 +169,12 @@ export const componentMap: ComponentType[] = [
         disabled: false,
         type: "component",
     },
+    {
+        id: 19,
+        title: "Keyboard Key",
+        value: "kbd",
+        href: "/kbd",
+        disabled: false,
+        type: "component",
+    },
 ];
