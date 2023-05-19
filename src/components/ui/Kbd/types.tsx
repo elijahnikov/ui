@@ -16,3 +16,10 @@ export const keyMap: KeyMapType = {
     meta: <span>{os === "macOS" ? "⌘" : "ctrl"}</span>,
     shift: <span>⇧</span>,
 };
+
+export const keyTooltipMap = {
+    alt: "Alt",
+    ctrl: "Control",
+    meta: os === "macOS" ? "Command" : "Control",
+    shift: "Shift",
+};
