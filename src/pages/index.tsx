@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <Layout>
             <span>
-                <Kbd alt shift meta ctrl>
+                <Kbd alt tooltip shift meta ctrl>
                     H
                 </Kbd>
 
@@ -17,7 +17,7 @@ export default function Home() {
                     H
                 </Kbd>
 
-                <Kbd meta shift>
+                <Kbd meta tooltip shift>
                     H
                 </Kbd>
             </span>
