@@ -13,7 +13,7 @@ export const componentMap: ComponentType[] = [
         title: "Accordion",
         value: "accordion",
         href: "/accordion",
-        disabled: true,
+        disabled: false,
         type: "layout",
     },
     {

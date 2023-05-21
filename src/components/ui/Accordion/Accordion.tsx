@@ -19,7 +19,7 @@ interface AccordionTriggerContentProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Accordion = ({ children }: AccordionProps) => {
-    const [selectedItem, setSelectedItem] = useState<boolean>(false);
+    const [selectedItem, setSelectedItem] = useState<string>("");
     return (
         <div>
             {React.Children.map(children, (child) => {
@@ -40,7 +40,7 @@ const Item = React.forwardRef<HTMLDivElement, AccordionItemProps>(
                 ref={ref}
                 className={clxsm(
                     className,
-                    "focus-within:shadow-mauve12 mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 focus-within:shadow-[0_0_0_2px]"
+                    "mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10"
                 )}
             >
                 {React.Children.map(children, (child) => {
