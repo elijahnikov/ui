@@ -123,7 +123,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 >
                     {/* is prefix is passed */}
                     {Prefix && (
-                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative z-10 left-[-5px] border-r-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
+                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative left-[-5px] border-r-0 border-[1px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
                             <p className=" text-slate-400">
                                 {typeof Prefix !== "string"
                                     ? (Prefix as IconType) && (
@@ -173,7 +173,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     )}
                     {/* if suffix is passed */}
                     {Suffix && (
-                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative z-10 right-[-5px] border-l-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
+                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative right-[-5px] border-l-0 border-[1px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
                             <p className=" text-slate-400">
                                 {typeof Suffix !== "string"
                                     ? (Suffix as IconType) && (
