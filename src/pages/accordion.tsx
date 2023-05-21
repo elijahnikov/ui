@@ -1,6 +1,7 @@
 import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
+import PageStepper from "@/components/common/PageStepper/PageStepper";
 import Accordion from "@/components/ui/Accordion/Accordion";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
 import { accordionCode, accordionMenuMap } from "@/maps/component/accordion";
@@ -46,6 +47,7 @@ const AccordionPage = ({}: AccordionPageProps) => {
                 </ExampleBlock>
                 <CodeBlock code={accordionCode.usage} />
             </div>
+            <PageStepper currentPage="accordion" />
         </Layout>
     );
 };
