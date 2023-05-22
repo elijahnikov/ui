@@ -14,7 +14,7 @@ export const componentMap: ComponentType[] = [
         value: "accordion",
         href: "/accordion",
         disabled: false,
-        type: "layout",
+        type: "component",
     },
     {
         id: 1,
@@ -22,7 +22,7 @@ export const componentMap: ComponentType[] = [
         value: "card",
         href: "/card",
         disabled: true,
-        type: "layout",
+        type: "component",
     },
     {
         id: 3,
