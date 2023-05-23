@@ -7,6 +7,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 // Components
 import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
+import SiteSearch from "../SiteSearch/SiteSearch";
 
 const NavBar = () => {
     return (
@@ -29,6 +30,7 @@ const NavBar = () => {
                         <AiFillGithub className="h-6 w-6 fill-slate-700 dark:fill-white float-right ml-2" />
                     </a>
                 </div>
+                <SiteSearch />
             </div>
             <div className="w-[10vw] min-w-[10vw] inline-flex items-center justify-center text-center mx-0">
                 <div className="ml-2">
