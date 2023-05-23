@@ -4,7 +4,7 @@ import { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const input = cva(
-    ["w-[50%] py-2 px-3", "rounded-lg", "border-[2px]", "outline-none"],
+    ["w-[50%] py-2 px-3", "rounded-lg", "border-[1px]", "outline-none"],
     {
         variants: {
             intent: {
