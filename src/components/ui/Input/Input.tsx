@@ -77,6 +77,7 @@ interface InputProps
     suffix?: IconType | string;
     clearable?: boolean;
     change?: Function;
+    kbd?: JSX.Element;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -96,6 +97,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         value,
         change,
         label,
+        kbd: Kbd,
         ...props
     }) => {
         const inputRef = useRef<HTMLInputElement | null>(null);
@@ -103,6 +105,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         const clearInput = () => {
             change && change("");
         };
+
+        let kbdPadding = Kbd && Object.keys(Kbd.props).length;
 
         return (
             <>
@@ -117,7 +121,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 <div
                     //if fullWidth is passed make container w-100% other wise make it fit content
                     // if prefix and suffix is passed add flex so that elements are side by side
-                    className={`${(Prefix || Suffix) && "flex"} ${
+                    className={`${(Prefix || Suffix || Kbd) && "flex"} ${
                         Prefix && "ml-[4px]"
                     } ${fullWidth ? "w-[100%]" : "w-max"} relative text-left`}
                 >
@@ -170,6 +174,17 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                                     : "right-[1%]"
                             } bg-white rounded-lg dark:bg-black pl-2 pr-3 absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-10 w-10 top-[50%] right-[1%]`}
                         />
+                    )}
+                    {Kbd && (
+                        <div
+                            className={`${
+                                Kbd
+                                    ? `right-[${kbdPadding!! * 20}px]`
+                                    : "right-0"
+                            } relative justify-center items-center flex align-left`}
+                        >
+                            {Kbd}
+                        </div>
                     )}
                     {/* if suffix is passed */}
                     {Suffix && (
