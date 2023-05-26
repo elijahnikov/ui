@@ -12,15 +12,23 @@ type ComponentResult = {
 
 interface ResultsProps {
     componentResults: ComponentResult[];
+    inputReference: React.MutableRefObject<HTMLInputElement | null>;
 }
 
-const Results = ({ componentResults }: ResultsProps) => {
+const Results = ({ componentResults, inputReference }: ResultsProps) => {
     const [cursor, setCursor] = useState<number>(0);
-
+    const [results, setResults] = useState<ComponentResult[]>(componentResults);
     const router = useRouter();
 
     const focusFunction = useCallback(
         (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                if (inputReference.current) {
+                    inputReference.current.value = "";
+                    inputReference.current.blur();
+                }
+                setResults([]);
+            }
             if (event.key === "ArrowUp" && cursor > 0) {
                 setCursor(cursor - 1);
             } else if (
@@ -39,6 +47,10 @@ const Results = ({ componentResults }: ResultsProps) => {
     );
 
     useEffect(() => {
+        setResults(componentResults);
+    }, [componentResults]);
+
+    useEffect(() => {
         document.addEventListener("keydown", focusFunction, false);
 
         return () => {
@@ -48,7 +60,7 @@ const Results = ({ componentResults }: ResultsProps) => {
 
     return (
         <>
-            {componentResults.length > 0 && (
+            {results.length > 0 && (
                 <div className="absolute bg-white border-[1px] rounded-lg mt-1 p-2 w-[100%]">
                     {componentResults.map((component, i) => (
                         <div
