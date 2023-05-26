@@ -25,16 +25,15 @@ const NavBar = () => {
                     />
                     <h4 className="ml-[10px]">Supercrumble UI</h4>
                 </Link>
+
+                <SiteSearch />
+            </div>
+            <div className="w-[10vw] min-w-[10vw] flex items-center justify-center text-center mx-0">
+                <DarkModeSwitch />
                 <div className="ml-2">
                     <a href="https://github.com/elijahnikov/ui">
                         <AiFillGithub className="h-6 w-6 fill-slate-700 dark:fill-white float-right ml-2" />
                     </a>
-                </div>
-                <SiteSearch />
-            </div>
-            <div className="w-[10vw] min-w-[10vw] inline-flex items-center justify-center text-center mx-0">
-                <div className="ml-2">
-                    <DarkModeSwitch />
                 </div>
             </div>
         </div>
