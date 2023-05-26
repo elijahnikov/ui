@@ -77,7 +77,10 @@ const SiteSearch = ({}: SiteSearchProps) => {
             </div>
             <div className="w-[30vw]">
                 {filteredComponentMap && (
-                    <Results componentResults={filteredComponentMap} />
+                    <Results
+                        inputReference={inputRef}
+                        componentResults={filteredComponentMap}
+                    />
                 )}
             </div>
         </div>
