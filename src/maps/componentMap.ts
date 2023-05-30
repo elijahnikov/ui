@@ -177,4 +177,11 @@ export const componentMap: ComponentType[] = [
         disabled: false,
         type: "component",
     },
+    {
+        id: 25,
+        title: "Dialog",
+        value: "dialog",
+        href: "/dialog",
+        type: "component",
+    },
 ];

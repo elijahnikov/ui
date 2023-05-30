@@ -81,25 +81,28 @@ interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({
-        intent,
-        children,
-        className,
-        size,
-        disabled,
-        error = false,
-        errorText,
-        prefix: Prefix,
-        suffix: Suffix,
-        clearable,
-        placeholder,
-        fullWidth,
-        value,
-        change,
-        label,
-        kbd: Kbd,
-        ...props
-    }) => {
+    (
+        {
+            intent,
+            children,
+            className,
+            size,
+            disabled,
+            error = false,
+            errorText,
+            prefix: Prefix,
+            suffix: Suffix,
+            clearable,
+            placeholder,
+            fullWidth,
+            value,
+            change,
+            label,
+            kbd: Kbd,
+            ...props
+        },
+        ref
+    ) => {
         const inputRef = useRef<HTMLInputElement | null>(null);
 
         const clearInput = () => {

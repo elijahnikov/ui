@@ -1,8 +1,8 @@
 export type KeyMapType = {
-    alt: React.ReactNode;
-    ctrl: React.ReactNode;
-    meta: React.ReactNode;
-    shift: React.ReactNode;
+    alt: JSX.Element;
+    ctrl: JSX.Element;
+    meta: JSX.Element;
+    shift: JSX.Element;
 };
 
 const os =
