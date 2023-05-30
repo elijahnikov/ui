@@ -16,7 +16,7 @@ const ComponentsBar = () => {
 
     return (
         <div className="hidden lg:flex dark:border-gray-800 fixed overflow-y-scroll border-r-[1px] h-[92vh] min-w-[20%] w-[20%] dark:bg-black bg-white  mx-auto justify-center align-center p-[10px] float-left">
-            <div className="mt-[40px] w-[60%] ">
+            <div className="mt-[40px] absolute right-10 w-[60%] ">
                 <div className="mb-[20px]">
                     <div className="pb-[10px]">
                         <p className="font-semibold dark:text-white text-slate-700">
