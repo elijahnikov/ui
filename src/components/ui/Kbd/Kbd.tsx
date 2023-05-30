@@ -12,9 +12,9 @@ interface KbdProps {
 }
 
 const appendKeys = (props: KbdProps) => {
-    let finalKey: React.ReactNode[] = [];
+    let finalKey: JSX.Element[] = [];
 
-    for (let key of Object.keys(props)) {
+    Object.keys(props).forEach((key) => {
         if (keyMap[key as keyof KeyMapType]) {
             if (props.tooltip) {
                 finalKey.push(
@@ -31,17 +31,22 @@ const appendKeys = (props: KbdProps) => {
                 finalKey.push(keyMap[key as keyof KeyMapType]);
             }
         }
-    }
+    });
     props.children && finalKey.push(<span>{props.children}</span>);
 
     return finalKey;
 };
 
 const Kbd = (props: KbdProps) => {
-    const [keys, setKeys] = useState<React.ReactNode[]>([]);
+    const [keys, setKeys] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
-        setKeys(appendKeys(props));
+        // map over and give each key component a key
+        setKeys(
+            appendKeys(props).map((item, key) =>
+                React.cloneElement(item, { key })
+            )
+        );
     }, [props]);
     return (
         <div className="flex w-max h-max text-xs border-[1px] rounded-md p-[4px] dark:text-sky-base dark:border-ink-base text-ink-light font-semibold dark:bg-slate-800 bg-sky-lightest space-x-2">

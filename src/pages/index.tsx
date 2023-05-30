@@ -14,7 +14,23 @@ export default function Home() {
                 <Modal.Trigger>Click me</Modal.Trigger>
                 <Modal.Content>
                     <Modal.Title>Hello</Modal.Title>
-                    <Input />
+                    <p>
+                        {`Make changes to your profile here. Click save when
+                        you're done.`}
+                    </p>
+                    <div className="mt-4 mb-4">
+                        <Input
+                            label="Name"
+                            placeholder="John Smith"
+                            fullWidth
+                        />
+                        <div className="mt-4" />
+                        <Input
+                            label="E-mail"
+                            placeholder="johnsmith@supercrumble.com"
+                            fullWidth
+                        />
+                    </div>
                     <Modal.Close>
                         <Button>Close</Button>
                     </Modal.Close>
