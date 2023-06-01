@@ -4,7 +4,7 @@ import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
 import PageStepper from "@/components/common/PageStepper/PageStepper";
 import CodeBlock from "@/components/ui/CodeBlock/CodeBlock";
-import InputArea from "@/components/ui/InpuArea/InputArea";
+import InputArea from "@/components/ui/InputArea/InputArea";
 import { inputAreaCode, inputAreaMenuMap } from "@/maps/component/inputArea";
 import React from "react";
 

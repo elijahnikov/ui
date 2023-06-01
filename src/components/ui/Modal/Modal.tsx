@@ -32,8 +32,8 @@ const Trigger = ({ children }: { children: React.ReactNode }) => {
 const Content = ({ children }: { children: React.ReactNode }) => {
     return (
         <DialogPrimitive.Portal>
-            <DialogPrimitive.Overlay className="bg-black opacity-40 data-[state=open]:animate-overlayShow fixed z-10 inset-0" />
-            <DialogPrimitive.Content className="z-20 data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white dark:bg-slate-800 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
+            <DialogPrimitive.Overlay className="fixed inset-0 z-10 bg-background/80 backdrop-blur-sm transition-all duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in" />
+            <DialogPrimitive.Content className="animate-in z-20 data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 data-[state=open]:sm:slide-in-from-bottom-0 fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white dark:bg-slate-800 p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none">
                 {children}
                 <DialogPrimitive.Close asChild>
                     <button
@@ -58,7 +58,7 @@ const Title = ({ children }: { children: React.ReactNode }) => {
 
 const Close = ({ children }: { children: React.ReactNode }) => {
     return (
-        <DialogPrimitive.Close asChild className="mt-5">
+        <DialogPrimitive.Close asChild className="mt-5 mr-5">
             {children}
         </DialogPrimitive.Close>
     );
