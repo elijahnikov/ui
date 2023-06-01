@@ -77,32 +77,39 @@ interface InputProps
     suffix?: IconType | string;
     clearable?: boolean;
     change?: Function;
+    kbd?: JSX.Element;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({
-        intent,
-        children,
-        className,
-        size,
-        disabled,
-        error = false,
-        errorText,
-        prefix: Prefix,
-        suffix: Suffix,
-        clearable,
-        placeholder,
-        fullWidth,
-        value,
-        change,
-        label,
-        ...props
-    }) => {
+    (
+        {
+            intent,
+            children,
+            className,
+            size,
+            disabled,
+            error = false,
+            errorText,
+            prefix: Prefix,
+            suffix: Suffix,
+            clearable,
+            placeholder,
+            fullWidth,
+            value,
+            change,
+            label,
+            kbd: Kbd,
+            ...props
+        },
+        ref
+    ) => {
         const inputRef = useRef<HTMLInputElement | null>(null);
 
         const clearInput = () => {
             change && change("");
         };
+
+        let kbdPadding = Kbd && Object.keys(Kbd.props).length;
 
         return (
             <>
@@ -117,13 +124,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 <div
                     //if fullWidth is passed make container w-100% other wise make it fit content
                     // if prefix and suffix is passed add flex so that elements are side by side
-                    className={`${(Prefix || Suffix) && "flex"} ${
+                    className={`${(Prefix || Suffix || Kbd) && "flex"} ${
                         Prefix && "ml-[4px]"
                     } ${fullWidth ? "w-[100%]" : "w-max"} relative text-left`}
                 >
                     {/* is prefix is passed */}
                     {Prefix && (
-                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative z-10 left-[-5px] border-r-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
+                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-l-lg relative left-[-5px] border-r-0 border-[1px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
                             <p className=" text-slate-400">
                                 {typeof Prefix !== "string"
                                     ? (Prefix as IconType) && (
@@ -171,9 +178,20 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                             } bg-white rounded-lg dark:bg-black pl-2 pr-3 absolute fill-ink-light cursor-pointer -translate-y-2/4 dark:fill-slate-500 h-10 w-10 top-[50%] right-[1%]`}
                         />
                     )}
+                    {Kbd && (
+                        <div
+                            className={`${
+                                Kbd
+                                    ? `right-[${kbdPadding!! * 20}px]`
+                                    : "right-0"
+                            } relative justify-center items-center flex align-left`}
+                        >
+                            {Kbd}
+                        </div>
+                    )}
                     {/* if suffix is passed */}
                     {Suffix && (
-                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative z-10 right-[-5px] border-l-0 border-[2px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
+                        <div className="flex justify-center items-center bg-sky-lightest dark:bg-ink-darkest rounded-r-lg relative right-[-5px] border-l-0 border-[1px] border-sky-light dark:border-slate-800 py-2 px-3 text-sm">
                             <p className=" text-slate-400">
                                 {typeof Suffix !== "string"
                                     ? (Suffix as IconType) && (

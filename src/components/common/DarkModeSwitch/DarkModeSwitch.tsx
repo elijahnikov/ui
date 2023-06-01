@@ -20,16 +20,18 @@ const DarkModeSwitch = ({}: DarkModeSwitchProps) => {
     }, [theme]);
 
     return (
-        <Button
-            loading={false}
-            intent={theme === "light" ? "secondary" : "outline"}
-            className="p-2 rounded-md"
+        <div
+            className="p-2 rounded-md cursor-pointer"
             onClick={() => {
                 setTheme(theme === "light" ? "dark" : "light");
             }}
         >
-            {!isDark ? <BsMoonFill /> : <BsFillSunFill />}
-        </Button>
+            {!isDark ? (
+                <BsMoonFill className="fill-black" />
+            ) : (
+                <BsFillSunFill className="fill-white" />
+            )}
+        </div>
     );
 };
 

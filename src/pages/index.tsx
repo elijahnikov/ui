@@ -1,18 +1,24 @@
 import Layout from "@/components/common/Layout/Layout";
-import { Badge, BadgeIcon, BadgeLabel } from "@/components/ui/Badge/Badge";
+import Accordion from "@/components/ui/Accordion/Accordion";
 import Button from "@/components/ui/Button/Button";
+import Modal from "@/components/ui/Modal/Modal";
+import Input from "@/components/ui/Input/Input";
+import Kbd from "@/components/ui/Kbd/Kbd";
+import Progress from "@/components/ui/Progress/Progress";
 import Spinner from "@/components/ui/Spinner/Spinner";
-import Tabs from "@/components/ui/Tabs/Tabs";
-import Tooltip from "@/components/ui/Tooltip/Tooltip";
-import { BiFile, BiGitBranch } from "react-icons/bi";
-import { BsGithub, BsPlus } from "react-icons/bs";
 
 export default function Home() {
     return (
         <Layout>
-            <div className="mt-[20px]">
-                <Spinner />
-            </div>
+            <Modal>
+                <Modal.Trigger>Click me</Modal.Trigger>
+                <Modal.Content>
+                    <h3>This is a modal!</h3>
+                    <Modal.Close>
+                        <Button>Close</Button>
+                    </Modal.Close>
+                </Modal.Content>
+            </Modal>
         </Layout>
     );
 }

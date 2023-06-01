@@ -9,23 +9,23 @@ export type ComponentType = {
 
 export const componentMap: ComponentType[] = [
     {
-        id: 2,
+        id: 20,
         title: "Accordion",
         value: "accordion",
         href: "/accordion",
-        disabled: true,
-        type: "layout",
+        disabled: false,
+        type: "component",
     },
     {
-        id: 1,
+        id: 21,
         title: "Card",
         value: "card",
         href: "/card",
         disabled: true,
-        type: "layout",
+        type: "component",
     },
     {
-        id: 3,
+        id: 22,
         title: "Grid",
         value: "grid",
         href: "/grid",
@@ -33,7 +33,7 @@ export const componentMap: ComponentType[] = [
         type: "layout",
     },
     {
-        id: 4,
+        id: 23,
         title: "Stack",
         value: "stack",
         href: "/stack",
@@ -41,7 +41,7 @@ export const componentMap: ComponentType[] = [
         type: "layout",
     },
     {
-        id: 5,
+        id: 24,
         title: "Triple Column",
         value: "triple_column",
         href: "/triple-column",
@@ -134,7 +134,7 @@ export const componentMap: ComponentType[] = [
         title: "Progress",
         value: "progress",
         href: "/progress",
-        disabled: true,
+        disabled: false,
         type: "component",
     },
     {
@@ -159,6 +159,29 @@ export const componentMap: ComponentType[] = [
         value: "badge",
         href: "/badge",
         disabled: false,
+        type: "component",
+    },
+    {
+        id: 18,
+        title: "Toast",
+        value: "toast",
+        href: "/toast",
+        disabled: false,
+        type: "component",
+    },
+    {
+        id: 19,
+        title: "Keyboard Key",
+        value: "kbd",
+        href: "/kbd",
+        disabled: false,
+        type: "component",
+    },
+    {
+        id: 25,
+        title: "Modal",
+        value: "modal",
+        href: "/modal",
         type: "component",
     },
 ];
