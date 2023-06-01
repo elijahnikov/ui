@@ -179,9 +179,9 @@ export const componentMap: ComponentType[] = [
     },
     {
         id: 25,
-        title: "Dialog",
-        value: "dialog",
-        href: "/dialog",
+        title: "Modal",
+        value: "modal",
+        href: "/modal",
         type: "component",
     },
 ];
