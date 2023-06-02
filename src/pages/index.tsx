@@ -1,24 +1,27 @@
 import Layout from "@/components/common/Layout/Layout";
-import Accordion from "@/components/ui/Accordion/Accordion";
-import Button from "@/components/ui/Button/Button";
-import Modal from "@/components/ui/Modal/Modal";
-import Input from "@/components/ui/Input/Input";
-import Kbd from "@/components/ui/Kbd/Kbd";
-import Progress from "@/components/ui/Progress/Progress";
-import Spinner from "@/components/ui/Spinner/Spinner";
+import Error from "@/components/ui/Error/Error";
 
 export default function Home() {
     return (
         <Layout>
-            <Modal>
-                <Modal.Trigger>Click me</Modal.Trigger>
-                <Modal.Content>
-                    <h3>This is a modal!</h3>
-                    <Modal.Close>
-                        <Button>Close</Button>
-                    </Modal.Close>
-                </Modal.Content>
-            </Modal>
+            <Error>This is a test</Error>
+            <Error label="Email Error">Incorrect email</Error>
+            <Error size="sm" label="Email Error">
+                Incorrect email
+            </Error>
+            <Error size="base" label="Email Error">
+                Incorrect email
+            </Error>
+            <Error size="large" label="Email Error">
+                Incorrect email
+            </Error>
+            <Error
+                error={{
+                    message: "The request failed.",
+                    action: "Contact Us",
+                    link: "/",
+                }}
+            />
         </Layout>
     );
 }
