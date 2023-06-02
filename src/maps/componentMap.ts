@@ -142,7 +142,6 @@ export const componentMap: ComponentType[] = [
         title: "Error",
         value: "error",
         href: "/error",
-        disabled: true,
         type: "component",
     },
     {

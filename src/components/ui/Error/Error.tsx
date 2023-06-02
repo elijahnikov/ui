@@ -39,7 +39,8 @@ const Error = ({
             {label && <p className="font-semibold text-red-500">{label}</p>}
             {children && (
                 <span className="flex text-red-500">
-                    :<p className="text-red-500 ml-1">{children}</p>
+                    {label && <p>:</p>}
+                    <p className="text-red-500 ml-1">{children}</p>
                 </span>
             )}
             {error && (
