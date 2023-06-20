@@ -113,14 +113,14 @@ export const componentMap: ComponentType[] = [
         disabled: false,
         type: "component",
     },
-    {
-        id: 12,
-        title: "Table",
-        value: "table",
-        href: "/table",
-        disabled: true,
-        type: "component",
-    },
+    // {
+    //     id: 12,
+    //     title: "Table",
+    //     value: "table",
+    //     href: "/table",
+    //     disabled: true,
+    //     type: "component",
+    // },
     {
         id: 13,
         title: "Spinner",

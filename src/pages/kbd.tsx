@@ -14,7 +14,7 @@ const KbdPage = ({}: KbdPageProps) => {
         <Layout title="Keyboard Key - Supercrumble UI" menuMap={kbdMenuMap}>
             <div className="mb-[40px]">
                 <PageHeader
-                    title="Keybord Key"
+                    title="Keyboard Key"
                     description="Show which key or combination of keys perform a specific action, like focusing an input field or saving a file."
                     githubLink="/"
                 />
