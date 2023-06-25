@@ -6,6 +6,24 @@ export default function Home() {
     return (
         <Layout>
             <APIReferenceTable
+                title="Accordion"
+                data={[
+                    {
+                        propName: "children",
+                        tooltip: "hello",
+                        type: "React Element",
+                        default: "-",
+                    },
+                    {
+                        propName: "children",
+                        tooltip: "hello",
+                        type: "React Element",
+                        default: "-",
+                    },
+                ]}
+            />
+            <APIReferenceTable
+                title="Accordion.Trigger"
                 data={[
                     {
                         propName: "children",
