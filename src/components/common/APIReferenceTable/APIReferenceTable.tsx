@@ -53,9 +53,10 @@ const columns = [
 
 interface APIReferenceTableProps {
     data: Prop[];
+    title?: string;
 }
 
-const APIReferenceTable = ({ data }: APIReferenceTableProps) => {
+const APIReferenceTable = ({ data, title }: APIReferenceTableProps) => {
     const table = useReactTable({
         data,
         columns,
@@ -63,7 +64,8 @@ const APIReferenceTable = ({ data }: APIReferenceTableProps) => {
     });
 
     return (
-        <div className="w-[100%]">
+        <div className="w-[100%] mb-5">
+            <p className="font-semibold mb-5">{title}</p>
             <table className="w-[100%]">
                 <thead>
                     {table.getHeaderGroups().map((headerGroup) => (
