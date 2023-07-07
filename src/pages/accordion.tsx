@@ -1,3 +1,4 @@
+import APIReferenceTable from "@/components/common/APIReferenceTable/APIReferenceTable";
 import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
@@ -46,6 +47,39 @@ const AccordionPage = ({}: AccordionPageProps) => {
                     </Accordion>
                 </ExampleBlock>
                 <CodeBlock code={accordionCode.usage} />
+            </div>
+            <div className="mt-10">
+                <h4 className="mb-4">Props</h4>
+                <APIReferenceTable
+                    title="Accordion"
+                    data={[
+                        {
+                            propName: "children",
+                            type: "React Element",
+                            default: "-",
+                        },
+                    ]}
+                />
+                <APIReferenceTable
+                    title="Accordion.Trigger"
+                    data={[
+                        {
+                            propName: "value",
+                            type: "string",
+                            default: "-",
+                        },
+                    ]}
+                />
+                <APIReferenceTable
+                    title="Accordion.Content"
+                    data={[
+                        {
+                            propName: "children",
+                            type: "React Element",
+                            default: "-",
+                        },
+                    ]}
+                />
             </div>
             <PageStepper currentPage="accordion" />
         </Layout>
