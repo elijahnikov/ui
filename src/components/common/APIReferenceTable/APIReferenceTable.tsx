@@ -11,7 +11,7 @@ import { BiInfoCircle } from "react-icons/bi";
 
 type Prop = {
     propName: string;
-    tooltip: string;
+    tooltip?: string;
     type: string;
     default: string;
 };
@@ -26,18 +26,20 @@ const columns = [
                 <p className="bg-primary-lighter text-primary-dark p-[4px] text-sm rounded-md">
                     {info.getValue()}
                 </p>
-                <div className="flex">
-                    <Tooltip>
-                        <Tooltip.Trigger>
-                            <div className="p-0 ml-1">
-                                <BiInfoCircle />
-                            </div>
-                        </Tooltip.Trigger>
-                        <Tooltip.Content>
-                            {info.row.original.tooltip}
-                        </Tooltip.Content>
-                    </Tooltip>
-                </div>
+                {info.row.original.tooltip && (
+                    <div className="flex">
+                        <Tooltip>
+                            <Tooltip.Trigger>
+                                <div className="p-0 ml-1">
+                                    <BiInfoCircle />
+                                </div>
+                            </Tooltip.Trigger>
+                            <Tooltip.Content>
+                                {info.row.original.tooltip}
+                            </Tooltip.Content>
+                        </Tooltip>
+                    </div>
+                )}
             </div>
         ),
     }),

@@ -1,3 +1,4 @@
+import APIReferenceTable from "@/components/common/APIReferenceTable/APIReferenceTable";
 import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import Layout from "@/components/common/Layout/Layout";
 import PageHeader from "@/components/common/PageHeader/PageHeader";
@@ -76,6 +77,39 @@ const BadgePage = ({}: BadgePageProps) => {
                     </div>
                 </ExampleBlock>
                 <CodeBlock code={badgeCode.icon} />
+            </div>
+            <div className="mt-10">
+                <h4 className="mb-4">Props</h4>
+                <APIReferenceTable
+                    title="Badge"
+                    data={[
+                        {
+                            propName: "children",
+                            type: "React Element",
+                            default: "-",
+                        },
+                    ]}
+                />
+                <APIReferenceTable
+                    title="BadgeIcon"
+                    data={[
+                        {
+                            propName: "icon",
+                            type: "IconType | JSX.Element",
+                            default: "-",
+                        },
+                    ]}
+                />
+                <APIReferenceTable
+                    title="BadgeLabel"
+                    data={[
+                        {
+                            propName: "children",
+                            type: "string | React Element",
+                            default: "-",
+                        },
+                    ]}
+                />
             </div>
             <PageStepper currentPage={"badge"} />
         </Layout>
