@@ -1,3 +1,4 @@
+import useKeyPress from "@/utils/useKeyPress";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
@@ -20,43 +21,24 @@ const Results = ({ componentResults, inputReference }: ResultsProps) => {
     const [results, setResults] = useState<ComponentResult[]>(componentResults);
     const router = useRouter();
 
-    const focusFunction = useCallback(
-        (event: KeyboardEvent) => {
-            if (event.key === "Escape") {
-                if (inputReference.current) {
-                    inputReference.current.value = "";
-                    inputReference.current.blur();
-                }
-                setResults([]);
-            }
-            if (event.key === "ArrowUp" && cursor > 0) {
-                setCursor(cursor - 1);
-            } else if (
-                event.key === "ArrowDown" &&
-                cursor < componentResults.length - 1
-            ) {
-                setCursor(cursor + 1);
-            }
-
-            if (event.key === "Enter") {
-                router.push(componentResults[cursor].href);
-            }
-        },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [componentResults, cursor]
-    );
+    useKeyPress("Escape", () => {
+        if (inputReference.current) {
+            inputReference.current.value = "";
+            inputReference.current.blur();
+        }
+        setResults([]);
+    });
+    useKeyPress("ArrowUp", () => {
+        if (cursor > 0) setCursor(cursor - 1);
+    });
+    useKeyPress("ArrowDown", () => {
+        if (cursor < componentResults.length - 1) setCursor(cursor + 1);
+    });
+    useKeyPress("Enter", () => router.push(componentResults[cursor].href));
 
     useEffect(() => {
         setResults(componentResults);
     }, [componentResults]);
-
-    useEffect(() => {
-        document.addEventListener("keydown", focusFunction, false);
-
-        return () => {
-            document.removeEventListener("keydown", focusFunction, false);
-        };
-    }, [focusFunction]);
 
     return (
         <>
