@@ -94,7 +94,7 @@ const APIReferenceTable = ({ data, title }: APIReferenceTableProps) => {
                             <tr className="p-[10px] h-[20px]" key={row.id}>
                                 {row.getVisibleCells().map((cell) => (
                                     <td
-                                        className="py-3 whitespace-nowrap border-b-[1px]"
+                                        className="py-3 w-[33%] whitespace-nowrap border-b-[1px]"
                                         key={cell.id}
                                     >
                                         {flexRender(
