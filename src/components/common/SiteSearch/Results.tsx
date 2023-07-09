@@ -43,22 +43,22 @@ const Results = ({ componentResults, inputReference }: ResultsProps) => {
     return (
         <>
             {results.length > 0 && (
-                <div className="absolute bg-white border-[1px] rounded-lg mt-1 p-2 w-[100%]">
+                <div className="absolute bg-white dark:bg-ink-darkest dark:border-slate-800 border-[1px] rounded-lg mt-1 p-2 w-[100%]">
                     {componentResults.map((component, i) => (
                         <div
                             className={`${
                                 cursor === i
-                                    ? "bg-primary-lightest"
+                                    ? "bg-primary-lightest dark:bg-slate-800"
                                     : "hover:bg-primary-lightest"
                             } text-left cursor-pointer p-2  rounded-md`}
                             key={component.id}
                             onMouseEnter={() => setCursor(i)}
                         >
                             <Link href={component.href}>
-                                <p className="text-primary-dark">
+                                <p className="text-primary-dark dark:text-primary-base">
                                     {component.title}
                                 </p>
-                                <p className="text-sm text-ink-dark">
+                                <p className="text-sm text-ink-dark dark:text-sky-base">
                                     {component.type}
                                 </p>
                             </Link>
