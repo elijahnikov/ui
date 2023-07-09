@@ -1,3 +1,4 @@
+import { PropType } from "@/components/common/APIReferenceTable/APIReferenceTable";
 import { MenuMap } from "./types";
 
 export const buttonMenuMap: MenuMap[] = [
@@ -85,3 +86,54 @@ import { AiFillSave, AiOutlineCloudDownload } from "react-icons/ai";
     Download
 </Button>`,
 };
+
+export const buttonProps: PropType[] & { id: number }[] = [
+    {
+        id: 1,
+        propName: "intent",
+        type: `"primary" | "secondary" | "outline" | "transparent"`,
+        default: "primary",
+    },
+    {
+        id: 2,
+        propName: "size",
+        type: `"base" | "sm" | "large"`,
+        default: "base",
+    },
+    {
+        id: 3,
+        propName: "fullWidth",
+        type: "boolean",
+        default: "false",
+    },
+    {
+        id: 4,
+        propName: "disabled",
+        type: "boolean",
+        default: "false",
+    },
+    {
+        id: 5,
+        propName: "children",
+        type: "React.ReactNode",
+        default: "-",
+    },
+    {
+        id: 6,
+        propName: "loading",
+        type: "boolean",
+        default: "false",
+    },
+    {
+        id: 7,
+        propName: "leftIcon",
+        type: "IconType",
+        default: "-",
+    },
+    {
+        id: 8,
+        propName: "rightIcon",
+        type: "IconType",
+        default: "-",
+    },
+];

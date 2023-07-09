@@ -9,20 +9,23 @@ import {
 import Tooltip from "@/components/ui/Tooltip/Tooltip";
 import { BiInfoCircle } from "react-icons/bi";
 
-type Prop = {
-    propName: string;
-    tooltip?: string;
-    type: string;
-    default: string;
-};
+export type PropType = Omit<
+    {
+        propName: string;
+        tooltip?: string;
+        type: string;
+        default: string;
+    },
+    "id"
+>;
 
-const columnHelper = createColumnHelper<Prop>();
+const columnHelper = createColumnHelper<PropType>();
 
 const columns = [
     columnHelper.accessor("propName", {
         header: () => <span>Prop</span>,
         cell: (info) => (
-            <div className="flex">
+            <div className="flex w-[40%]">
                 <p className="bg-primary-lighter dark:bg-primary-base text-primary-dark  dark:text-primary-lightest p-[4px] text-sm rounded-md">
                     {info.getValue()}
                 </p>
@@ -45,16 +48,20 @@ const columns = [
     }),
     columnHelper.accessor("type", {
         header: () => <span>Type</span>,
-        cell: (info) => <span className="text-sm">{info.getValue()}</span>,
+        cell: (info) => (
+            <span className="w-[40%] text-sm">{info.getValue()}</span>
+        ),
     }),
     columnHelper.accessor("default", {
         header: () => <span>Default</span>,
-        cell: (info) => <span className="text-sm">{info.getValue()}</span>,
+        cell: (info) => (
+            <span className="w-[20%] text-sm">{info.getValue()}</span>
+        ),
     }),
 ];
 
 interface APIReferenceTableProps {
-    data: Prop[];
+    data: PropType[];
     title?: string;
 }
 
@@ -92,17 +99,29 @@ const APIReferenceTable = ({ data, title }: APIReferenceTableProps) => {
                     {table.getRowModel().rows.map((row) => (
                         <>
                             <tr className="p-[10px] h-[20px]" key={row.id}>
-                                {row.getVisibleCells().map((cell) => (
-                                    <td
-                                        className="py-3 w-[33%] whitespace-nowrap dark:border-b-slate-800 border-b-[1px]"
-                                        key={cell.id}
-                                    >
-                                        {flexRender(
-                                            cell.column.columnDef.cell,
-                                            cell.getContext()
-                                        )}
-                                    </td>
-                                ))}
+                                {row.getVisibleCells().map((cell) => {
+                                    console.log(cell);
+                                    return (
+                                        <td
+                                            className={`${
+                                                cell.column.id === "default" &&
+                                                "w-[20%]"
+                                            } ${
+                                                cell.column.id === "propName" &&
+                                                "w-[20%]"
+                                            } ${
+                                                cell.column.id === "type" &&
+                                                "w-[40%]"
+                                            } py-3 whitespace-nowrap dark:border-b-slate-800 border-b-[1px]`}
+                                            key={cell.id}
+                                        >
+                                            {flexRender(
+                                                cell.column.columnDef.cell,
+                                                cell.getContext()
+                                            )}
+                                        </td>
+                                    );
+                                })}
                             </tr>
                         </>
                     ))}

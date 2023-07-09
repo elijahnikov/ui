@@ -9,11 +9,16 @@ import ExampleBlock from "@/components/common/ExampleBlock/ExampleBlock";
 import Button from "@/components/ui/Button/Button";
 
 // Maps
-import { buttonCode, buttonMenuMap } from "@/maps/component/button";
+import {
+    buttonCode,
+    buttonMenuMap,
+    buttonProps,
+} from "@/maps/component/button";
 
 // Icons
 import { AiFillSave, AiOutlineCloudDownload } from "react-icons/ai";
 import PageStepper from "@/components/common/PageStepper/PageStepper";
+import APIReferenceTable from "@/components/common/APIReferenceTable/APIReferenceTable";
 
 interface buttonProps {}
 
@@ -134,6 +139,10 @@ const ButtonPage = ({}: buttonProps) => {
                     </Button>
                 </ExampleBlock>
                 <CodeBlock code={buttonCode.buttonWithIcon} />
+            </div>
+            <div className="mt-10">
+                <h4 className="mb-4">Props</h4>
+                <APIReferenceTable title="Button" data={buttonProps} />
             </div>
             <PageStepper currentPage="button" />
         </Layout>
