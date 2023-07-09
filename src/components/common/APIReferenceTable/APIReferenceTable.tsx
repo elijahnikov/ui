@@ -23,7 +23,7 @@ const columns = [
         header: () => <span>Prop</span>,
         cell: (info) => (
             <div className="flex">
-                <p className="bg-primary-lighter text-primary-dark p-[4px] text-sm rounded-md">
+                <p className="bg-primary-lighter dark:bg-primary-base text-primary-dark  dark:text-primary-lightest p-[4px] text-sm rounded-md">
                     {info.getValue()}
                 </p>
                 {info.row.original.tooltip && (
@@ -75,7 +75,7 @@ const APIReferenceTable = ({ data, title }: APIReferenceTableProps) => {
                             {headerGroup.headers.map((header) => (
                                 <th
                                     key={header.id}
-                                    className="text-left text-sm font-semibold text-ink-base dark:text-sky-base border-b-[1px] mb-[10px] pb-[10px]"
+                                    className="text-left text-sm font-semibold text-ink-base dark:text-sky-base dark:border-b-slate-800 border-b-[1px] mb-[10px] pb-[10px]"
                                 >
                                     {header.isPlaceholder
                                         ? null
@@ -94,7 +94,7 @@ const APIReferenceTable = ({ data, title }: APIReferenceTableProps) => {
                             <tr className="p-[10px] h-[20px]" key={row.id}>
                                 {row.getVisibleCells().map((cell) => (
                                     <td
-                                        className="py-3 w-[33%] whitespace-nowrap border-b-[1px]"
+                                        className="py-3 w-[33%] whitespace-nowrap dark:border-b-slate-800 border-b-[1px]"
                                         key={cell.id}
                                     >
                                         {flexRender(
